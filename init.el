@@ -1,5 +1,3 @@
-;;(load-theme 'deeper-blue)
-
 (add-to-list 'load-path "~/.emacs.d/")
 
 (require 'cmake-mode)
