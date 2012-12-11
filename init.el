@@ -14,7 +14,6 @@
  '(c-default-style (quote ((awk-mode . "awk") (other . "linux"))) t)
  '(c-objc-method-arg-unfinished-offset 8)
  '(c-objc-method-parameter-offset 8)
- '(c-tab-always-indent nil)
  '(display-time-24hr-format t)
  '(display-time-mode t)
  '(ecb-options-version "2.40")
@@ -38,29 +37,18 @@
 
 (setq c-default-style "linux" c-basic-offset 4)
 
-(defun my-indent-arglist-intro ()
+(defun c++-specific-hooks ()
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-close 0)
-)
-
-(defun my-indent-substatement-open ()
   (c-set-offset 'substatement-open '0)
-)
-
-(defun my-indent-inline-open ()
   (c-set-offset 'inline-open 0)
-)
-
-(defun my-indent-namespace-open ()
   (c-set-offset 'innamespace 0)
   (setq show-trailing-whitespace t)
+  (hide-ifdef-mode)
 )
 
-(add-hook 'c++-mode-hook 'my-indent-arglist-intro)
-(add-hook 'c++-mode-hook 'my-indent-substatement-open)
-(add-hook 'c++-mode-hook 'my-indent-inline-open)
-(add-hook 'c++-mode-hook 'my-indent-namespace-open)
-(add-hook 'c++-mode-hook 'hide-ifdef-mode)
+
+(add-hook 'c++-mode-hook 'c++-specific-hooks)
 
 ; Enable backup files.
 (setq make-backup-files t)
@@ -80,8 +68,6 @@
 ; Creates backups in home.
 (setq backup-directory-alist (quote (("." . "~/.backup_emacs.d"))))
 
-
-(setq compile-command "make -k -j8 -C /tmp/builds/reven/debug")
 
 
 ; http://www.gnu.org/software/emacs/manual/html_node/elisp/Auto-Major-Mode.html
@@ -162,8 +148,6 @@
 
 
 (require 'tty-format)
-
-(require (quote tty-format))
 (add-hook (quote find-file-hooks) (quote tty-format-guess))
 
 (define-derived-mode fundamental-ansi-mode fundamental-mode "fundamental ansi"
@@ -251,14 +235,10 @@
 (progn
   (define-key vc-prefix-map "p" 'vc-push-or-pull))
 
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (global-subword-mode)
 (global-visual-line-mode)
 
 
 (load "custom")
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
