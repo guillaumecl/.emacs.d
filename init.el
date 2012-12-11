@@ -1,4 +1,4 @@
-(load-theme 'deeper-blue)
+;;(load-theme 'deeper-blue)
 
 (add-to-list 'load-path "~/.emacs.d/")
 
@@ -33,7 +33,8 @@
  '(show-paren-mode t)
  '(standard-indent 8)
  '(tab-width 4)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(transient-mark-mode t))
 
 (setq c-default-style "linux" c-basic-offset 4)
 
@@ -235,10 +236,31 @@
 (progn
   (define-key vc-prefix-map "p" 'vc-push-or-pull))
 
-(fset 'yes-or-no-p 'y-or-n-p)
-
 (global-subword-mode)
 (global-visual-line-mode)
+
+
+
+(add-to-list 'auto-mode-alist '(".*mutt.*" . message-mode))
+(setq mail-header-separator "")
+(add-hook 'message-mode-hook
+          'turn-on-auto-fill
+          (function
+           (lambda ()
+             (progn
+               (local-unset-key "\C-c\C-c")
+               (define-key message-mode-map "\C-c\C-c" '(lambda ()
+                                                          "save and exit quickly"
+                                                          (interactive)
+                                                          (save-buffer)
+                                                          (server-edit)))))))
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(setq kill-whole-line t);; will make "Ctrl-k" kills an entire line if the cursor is at the beginning of line -- very useful.
+
+(setq c-hungry-delete-key t);; will delete "hungrily" in C mode! Use it to see what it does -- very useful.
+
+(setq c-auto-newline 1);; will let emacs put in a "carriage-return" for you automatically after left curly braces, right curly braces, and semi-colons in "C mode" -- very useful.
 
 
 (load "custom")
