@@ -5,5 +5,4 @@ session.*
 *.elc
 tramp
 ac-comphist.dat
-custom.el
 

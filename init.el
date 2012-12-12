@@ -261,4 +261,4 @@
 (setq c-auto-newline 1);; will let emacs put in a "carriage-return" for you automatically after left curly braces, right curly braces, and semi-colons in "C mode" -- very useful.
 
 
-(load "custom")
+(load (system-name))
