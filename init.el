@@ -109,6 +109,10 @@
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
 
+
+(global-set-key (kbd "M-S-<up>") 'scroll-down-line)
+(global-set-key (kbd "M-S-<down>") 'scroll-up-line)
+
 ; Show whitespaces at the end of lines.
 ; (setq-default show-trailing-whitespace t)
 ; Remove trailing whitespaces on save.
