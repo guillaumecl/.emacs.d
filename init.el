@@ -1,5 +1,9 @@
 (add-to-list 'load-path "~/.emacs.d/")
 
+(add-to-list 'load-path "~/.emacs.d/mingus")
+
+(require 'mingus)
+
 (require 'cmake-mode)
 
 (setq stack-trace-on-error t)

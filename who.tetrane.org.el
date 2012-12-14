@@ -19,6 +19,7 @@
 
 (semantic-mode)
 
+
 (progn
   (interactive)
   (cd "/home/gclement/src/tetrane/reven"))
