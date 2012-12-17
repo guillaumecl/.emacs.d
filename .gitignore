@@ -1,7 +1,9 @@
 semanticdb
 auto-save-list
 abbrev_defs
-session.*
+.session
+session*
+.emacs.desktop*
 tramp
 ac-comphist.dat
 

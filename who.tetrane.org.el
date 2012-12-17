@@ -17,6 +17,13 @@
 
 (semantic-mode)
 
+(setq org-todo-keyword-faces
+           '(
+             ("INPROGRESS" . (:foreground "gold" :weight bold))
+             ("IMPLEMENTED" . (:foreground "forest green" :weight bold))
+             ("REJECTED" . (:foreground "royal blue" :weight bold))
+            )
+)
 
 (progn
   (interactive)
@@ -38,12 +45,8 @@
   (find-file "/home/gclement/org/todo.org")
 )
 
-(setq org-todo-keyword-faces
-           '(
-             ("INPROGRESS" . (:foreground "gold" :weight bold))
-             ("IMPLEMENTED" . (:foreground "forest green" :weight bold))
-             ("REJECTED" . (:foreground "royal blue" :weight bold))
-            )
-)
+(other-frame 1)
 
 (load "mingus")
+
+(desktop-save-mode 1)
