@@ -1,10 +1,8 @@
 (load-theme 'deeper-blue)
 
 (setq-default indent-tabs-mode nil)
+ '(org-agenda-files (quote ("/home/gclement/src/tetrane/org/todo.org")))
 
-(setq org-agenda-files (list "~/org"
-                             "~/src/tetrane/org"
-                       ))
 (setq ecb-compile-window-height 6)
 (setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
 (setq ecb-source-file-regexps (quote ((".*" ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\|pyo\\)$\\)\\)") ("^\\.\\(emacs\\|gnus\\)$")))))

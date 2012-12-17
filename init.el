@@ -11,7 +11,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(c-default-style (quote ((awk-mode . "awk") (other . "linux"))) t)
+ '(c-default-style (quote ((awk-mode . "awk") (other . "linux"))))
  '(c-objc-method-arg-unfinished-offset 8)
  '(c-objc-method-parameter-offset 8)
  '(display-time-24hr-format t)
@@ -27,7 +27,6 @@
  '(jabber-account-list (quote (("tortuxm@baobob.org"))))
  '(jabber-vcard-avatars-retrieve nil)
  '(menu-bar-mode nil)
- '(org-agenda-files (quote ("/home/gclement/src/tetrane/org/todo.org")))
  '(scroll-bar-mode nil)
  '(shift-select-mode t)
  '(show-paren-mode t)
@@ -167,8 +166,9 @@
   )
 
 
-(setq org-agenda-files (list "~/org"
-                       ))
+(setq org-agenda-files (list "~/org"))
+(setq org-default-notes-file "~/org")
+
 (setq org-log-done 'time)
 (setq org-modules (quote (org-bbdb org-bibtex org-docview org-gnus org-info org-jsinfo org-irc org-mew org-mhe org-rmail org-vm org-wl org-w3m org-mouse)))
 (setq org-startup-indented t)
@@ -270,5 +270,6 @@
 
 (setq c-auto-newline 1);; will let emacs put in a "carriage-return" for you automatically after left curly braces, right curly braces, and semi-colons in "C mode" -- very useful.
 
+(setq org-export-html-postamble nil)
 
 (load (system-name))
