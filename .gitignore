@@ -2,7 +2,6 @@ semanticdb
 auto-save-list
 abbrev_defs
 session.*
-*.elc
 tramp
 ac-comphist.dat
 

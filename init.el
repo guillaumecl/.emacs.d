@@ -13,7 +13,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(c-default-style (quote ((awk-mode . "awk") (other . "linux"))))
+ '(c-default-style (quote ((awk-mode . "awk") (other . "linux"))) t)
  '(c-objc-method-arg-unfinished-offset 8)
  '(c-objc-method-parameter-offset 8)
  '(display-time-24hr-format t)
@@ -35,8 +35,7 @@
  '(show-paren-mode t)
  '(standard-indent 8)
  '(tab-width 4)
- '(tool-bar-mode nil)
- '(transient-mark-mode t))
+ '(tool-bar-mode nil))
 
 (setq c-default-style "linux" c-basic-offset 4)
 
@@ -274,3 +273,10 @@
 
 
 (load (system-name))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 122 :width normal)))))
