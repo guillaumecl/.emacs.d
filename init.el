@@ -2,8 +2,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/mingus")
 
-(require 'mingus)
-
 (require 'cmake-mode)
 
 (setq stack-trace-on-error t)
@@ -29,7 +27,6 @@
  '(jabber-account-list (quote (("tortuxm@baobob.org"))))
  '(jabber-vcard-avatars-retrieve nil)
  '(menu-bar-mode nil)
- '(org-agenda-files (quote ("/home/gclement/src/tetrane/org/todo.org")))
  '(scroll-bar-mode nil)
  '(shift-select-mode t)
  '(show-paren-mode t)
@@ -168,8 +165,9 @@
   )
 
 
-(setq org-agenda-files (list "~/org"
-                       ))
+(setq org-agenda-files (list "~/org"))
+(setq org-default-notes-file "~/org")
+
 (setq org-log-done 'time)
 (setq org-modules (quote (org-bbdb org-bibtex org-docview org-gnus org-info org-jsinfo org-irc org-mew org-mhe org-rmail org-vm org-wl org-w3m org-mouse)))
 (setq org-startup-indented t)
@@ -271,6 +269,7 @@
 
 (setq c-auto-newline 1);; will let emacs put in a "carriage-return" for you automatically after left curly braces, right curly braces, and semi-colons in "C mode" -- very useful.
 
+(setq org-export-html-postamble nil)
 
 (load (system-name))
 
