@@ -172,6 +172,11 @@
 (setq org-modules (quote (org-bbdb org-bibtex org-docview org-gnus org-info org-jsinfo org-irc org-mew org-mhe org-rmail org-vm org-wl org-w3m org-mouse)))
 (setq org-startup-indented t)
 
+(add-hook 'org-mode-hook
+          'visual-line-mode)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
@@ -244,7 +249,6 @@
   (define-key vc-prefix-map "p" 'vc-push-or-pull))
 
 (global-subword-mode)
-(global-visual-line-mode)
 
 
 

@@ -45,6 +45,8 @@
   (find-file "/home/gclement/org/todo.org")
 )
 
+(other-window 1)
+
 (other-frame 1)
 
 (load "mingus")
