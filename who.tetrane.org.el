@@ -45,3 +45,5 @@
              ("REJECTED" . (:foreground "royal blue" :weight bold))
             )
 )
+
+(load "mingus")
