@@ -1,4 +1,3 @@
-(load-theme 'deeper-blue)
 
 (setq-default indent-tabs-mode nil)
  '(org-agenda-files (quote ("/home/gclement/src/tetrane/org/todo.org")))
