@@ -118,6 +118,9 @@
 (global-set-key (kbd "M-S-<down>") 'scroll-up-line)
 
 
+(global-set-key (kbd "C-<left>") 'subword-backward)
+(global-set-key (kbd "C-<right>") 'subword-forward)
+
 (global-set-key (kbd "<f6>") 'mingus)
 
 
