@@ -634,9 +634,4 @@
 
 (provide-theme 'zenburn)
 
-;; Local Variables:
-;; indent-tabs-mode: nil
-;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
-;; End:
-
 ;;; zenburn-theme.el ends here.
