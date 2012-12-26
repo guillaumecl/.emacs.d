@@ -68,6 +68,7 @@
       (zenburn-yellow "#f0dfaf")
       (zenburn-yellow-1 "#e0cf9f")
       (zenburn-yellow-2 "#d0bf8f")
+      (zenburn-green-5 "#0f2f0f")
       (zenburn-green-1 "#5f7f5f")
       (zenburn-green "#7f9f7f")
       (zenburn-green+1 "#8fb28f")
@@ -97,7 +98,7 @@
    `(header-line ((t (:foreground ,zenburn-yellow
                                   :background ,zenburn-bg-1
                                   :box (:line-width -1 :style released-button)))))
-   `(highlight ((t (:background ,zenburn-bg-05))))
+   `(highlight ((t (:background ,zenburn-green-5))))
 
    ;;; compilation
    `(compilation-column-face ((t (:foreground ,zenburn-yellow))))
@@ -136,7 +137,7 @@
      ((t (:foreground ,zenburn-green-1
                       :background ,zenburn-bg-05
                       :box (:line-width -1 :style released-button)))))
-   `(region ((,class (:background ,zenburn-bg-1))
+   `(region ((,class (:background ,zenburn-green-5))
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zenburn-bg+2))))
    `(trailing-whitespace ((t (:background ,zenburn-red))))
@@ -634,9 +635,5 @@
 
 (provide-theme 'zenburn)
 
-;; Local Variables:
-;; indent-tabs-mode: nil
-;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
-;; End:
 
 ;;; zenburn-theme.el ends here.
