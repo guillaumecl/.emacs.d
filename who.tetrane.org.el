@@ -1,6 +1,6 @@
 
 (setq-default indent-tabs-mode nil)
- '(org-agenda-files (quote ("/home/gclement/src/tetrane/org/todo.org")))
+ '(org-agenda-files (quote ("/home/gclement/src/tetrane/org/tetrane.org")))
 
 (setq org-agenda-files (list "~/src/tetrane/org"))
 (setq org-default-notes-file "~/src/tetrane/org")
@@ -29,7 +29,7 @@
 )
 
 (progn
-  (interactive)
+  (called-interactively-p)
   (cd "/home/gclement/src/tetrane/reven"))
 
 (ecb-activate)
@@ -38,13 +38,13 @@
 
 (select-window (split-window-right -15))
 (progn
-  (interactive)
+  (called-interactively-p)
   (find-file "/home/gclement/src/tetrane/org/todo.org")
 )
 
 (select-window (split-window-below -15))
 (progn
-  (interactive)
+  (called-interactively-p)
   (find-file "/home/gclement/org/todo.org")
 )
 

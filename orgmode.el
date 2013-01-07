@@ -15,3 +15,21 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 (setq org-export-html-postamble nil)
+
+
+
+(defun org-save-hook()
+  "Org mode save hook"
+  (let ((script-dir (concat
+                    (file-name-directory (buffer-file-name))
+                    "commit.sh"
+                    )
+                   ))
+    (if (file-executable-p script-dir)
+        (shell-command script-dir)
+      )
+    )
+  )
+
+(add-hook 'org-mode-hook (lambda ()
+                           (add-hook 'after-save-hook 'org-save-hook nil t)))
