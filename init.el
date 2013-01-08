@@ -24,8 +24,6 @@
  '(inhibit-startup-echo-area-message nil)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
- '(jabber-account-list (quote (("tortuxm@baobob.org"))))
- '(jabber-vcard-avatars-retrieve nil)
  '(menu-bar-mode nil)
  '(scroll-bar-mode nil)
  '(shift-select-mode t)
@@ -42,6 +40,7 @@
 (load "orgmode")
 (load "git")
 (load "mail")
+(load "jabber")
 
 (require 'auto-recomp)
 (server-start)

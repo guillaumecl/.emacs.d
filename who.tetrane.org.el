@@ -39,7 +39,7 @@
 (select-window (split-window-right -15))
 (progn
   (called-interactively-p)
-  (find-file "/home/gclement/src/tetrane/org/todo.org")
+  (find-file "/home/gclement/src/tetrane/org/tetrane.org")
 )
 
 (select-window (split-window-below -15))
