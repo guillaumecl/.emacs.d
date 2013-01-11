@@ -40,7 +40,7 @@
 (load "orgmode")
 (load "git")
 (load "mail")
-(load "jabber")
+(load "jabbermode")
 
 (require 'auto-recomp)
 (server-start)
