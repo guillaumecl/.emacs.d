@@ -27,7 +27,6 @@
                    ))
     (if (file-executable-p script-dir)
         (shell-command script-dir)
-	    (px-revert-buffer-no-confirm)
       )
     )
   )
