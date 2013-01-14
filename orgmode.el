@@ -27,9 +27,13 @@
                    ))
     (if (file-executable-p script-dir)
         (shell-command script-dir)
+	    (px-revert-buffer-no-confirm)
       )
     )
   )
 
+
 (add-hook 'org-mode-hook (lambda ()
                            (add-hook 'after-save-hook 'org-save-hook nil t)))
+(add-hook 'org-mode-hook (lambda ()
+                           (add-hook 'find-file-hook 'org-save-hook nil t)))
