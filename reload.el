@@ -6,7 +6,10 @@
   (if (not (verify-visited-file-modtime (current-buffer)))
       (setq header-line-format
             (format "\t%s Press F5 to reload." (propertize "File changed externally."
-                                       (quote face) (quote (:foreground "#f00")))))))
+                                       (quote face) (quote (:foreground "#f00"))))))
+  (if (verify-visited-file-modtime (current-buffer))
+      (setq header-line-format nil))
+)
 
 (run-with-timer 0 1 (quote px-check-external-modifications))
 
