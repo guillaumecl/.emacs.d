@@ -16,7 +16,7 @@
 (setq ecb-windows-width 30)
 
 
-(setq compile-command "make -k -j20 -C /tmp/builds/reven/debug")
+(setq compile-command "/home/gclement/src/tetrane/compile.sh")
 
 (semantic-mode)
 
