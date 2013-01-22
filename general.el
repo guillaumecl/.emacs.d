@@ -86,3 +86,5 @@
   "Make the current window always display this buffer."
   nil " sticky" nil
   (set-window-dedicated-p (selected-window) sticky-buffer-mode))
+
+(delete-selection-mode)
