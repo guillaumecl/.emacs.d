@@ -3,13 +3,12 @@
 (defun px-check-external-modifications ()
   "Check if a buffer was modified outside emacs."
   (interactive)
-  (if (not (verify-visited-file-modtime (current-buffer)))
+  (if (and (buffer-modified-p) (not (verify-visited-file-modtime)))
       (setq header-line-format
             (format "\t%s Press F5 to reload." (propertize "File changed externally."
-                                       (quote face) (quote (:foreground "#f00"))))))
-  (if (verify-visited-file-modtime (current-buffer))
-      (setq header-line-format nil))
-)
+                                                           (quote face) (quote (:foreground "#f00")))))
+    )
+  )
 
 (run-with-timer 0 1 (quote px-check-external-modifications))
 
@@ -21,9 +20,4 @@
 ; http://emacswiki.org/emacs/RevertBuffer#toc1
 (global-set-key (kbd "<f5>") (quote px-revert-buffer-no-confirm))
 
-(if (and (buffer-modified-p) (file-exists-p (buffer-file-name))
-         (setq backup-file (car (find-backup-file-name buffer-file-name))))
-    (progn
-      (setq header-line-format (format "Buffer modified."))
-      (set-buffer (get-buffer-create (format "%s|original" (file-name-nondirectory buffer-file-name))))
-      (insert-file-contents buffer-file-name)))
+(global-auto-revert-mode)
