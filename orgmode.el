@@ -10,6 +10,9 @@
 (add-hook 'org-mode-hook
           'visual-line-mode)
 
+(add-hook 'org-mode-hook
+          'auto-revert-mode)
+
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)

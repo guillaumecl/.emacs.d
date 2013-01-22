@@ -1,3 +1,5 @@
+(setq jabber-alert-info-message-hooks nil)
+(setq jabber-alert-message-hooks nil)
 
 (setq-default indent-tabs-mode nil)
  '(org-agenda-files (quote ("/home/gclement/src/tetrane/org/tetrane.org")))
