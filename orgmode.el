@@ -16,6 +16,13 @@
 
 (setq org-export-html-postamble nil)
 
+(setq org-todo-keyword-faces
+           '(
+             ("PLANNED" . (:foreground "forest green" :weight bold))
+             ("STARTED" . (:foreground "gold" :weight bold))
+             ("CANCELLED" . (:foreground "royal blue" :weight bold))
+            )
+)
 
 
 (defun org-save-hook()

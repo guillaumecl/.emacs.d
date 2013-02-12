@@ -50,6 +50,11 @@
   (find-file "/home/gclement/org/todo.org")
 )
 
+(require 'fill-column-indicator)
+(setq fci-rule-column 120)
+
+(add-hook 'c-mode-hook 'fci-mode)
+
 (other-window 1)
 
 (other-frame 1)
