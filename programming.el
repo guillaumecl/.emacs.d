@@ -83,8 +83,14 @@
   (c-set-offset 'inline-open 0)
   (c-set-offset 'innamespace 0)
   (setq show-trailing-whitespace t)
-  (hide-ifdef-mode)
+;  (hide-ifdef-mode)
 ; (add-to-list 'ac-sources 'ac-source-gtags)
+  (add-to-list 'ac-sources 'ac-source-semantic)
+  (auto-complete-mode)
+)
+
+(defun python-specific-hooks ()
+  (setq show-trailing-whitespace t)
   (add-to-list 'ac-sources 'ac-source-semantic)
   (auto-complete-mode)
 )
@@ -92,6 +98,7 @@
 
 (add-hook 'c++-mode-hook 'c++-specific-hooks)
 
+(add-hook 'python-mode-hook 'python-specific-hooks)
 
 ;(setq c-hungry-delete-key t);; will delete "hungrily" in C mode! Use it to see what it does -- very useful.
 
