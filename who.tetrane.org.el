@@ -2,7 +2,6 @@
 (setq jabber-alert-message-hooks nil)
 
 (setq-default indent-tabs-mode nil)
- '(org-agenda-files (quote ("/home/gclement/src/tetrane/org/tetrane.org")))
 
 (setq org-agenda-files (list "~/src/tetrane/org"))
 (setq org-default-notes-file "~/src/tetrane/org")
@@ -20,7 +19,7 @@
 
 (setq compile-command "/home/gclement/src/tetrane/compile.sh")
 
-(semantic-mode)
+(semantic-mode 1)
 
 (setq org-todo-keyword-faces
            '(
@@ -38,27 +37,32 @@
 
 (select-frame (make-frame '((name . "emacs_right"))))
 
-(select-window (split-window-right -15))
-(progn
-  (called-interactively-p)
-  (find-file "/home/gclement/src/tetrane/org/tetrane.org")
-)
+;(select-window (split-window-right -15))
+;(progn
+;  (called-interactively-p)
+;  (find-file "/home/gclement/src/tetrane/org/tetrane.org")
+;)
 
-(select-window (split-window-below -15))
-(progn
-  (called-interactively-p)
-  (find-file "/home/gclement/org/todo.org")
-)
+;(select-window (split-window-below -15))
+;(progn
+;  (called-interactively-p)
+;  (find-file "/home/gclement/org/todo.org")
+;)
 
-(require 'fill-column-indicator)
-(setq fci-rule-column 120)
-
-(add-hook 'c-mode-hook 'fci-mode)
-
-(other-window 1)
+;(other-window 1)
 
 (other-frame 1)
 
 (load "mingus")
+
+(require 'fill-column-indicator)
+
+(defun fci-hooks ()
+  (setq fci-rule-column 120)
+  (fci-mode 1)
+)
+
+
+(add-hook 'c++-mode-hook 'fci-hooks)
 
 (desktop-save-mode 1)
