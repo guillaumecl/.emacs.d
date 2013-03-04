@@ -40,3 +40,5 @@
 (semanticdb-enable-gnu-global-databases 'c++-mode)
 
 (global-semantic-idle-summary-mode 1)
+
+(semantic-mode 1)
