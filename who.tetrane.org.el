@@ -55,6 +55,12 @@
 
 (load "mingus")
 
+(setq auto-mode-alist
+      (append
+       '(
+         ("\\.psp\\'" . python-mode)
+         ) auto-mode-alist))
+
 (require 'fill-column-indicator)
 
 (defun fci-hooks ()
