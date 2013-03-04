@@ -19,8 +19,6 @@
 
 (setq compile-command "/home/gclement/src/tetrane/compile.sh")
 
-(semantic-mode 1)
-
 (setq org-todo-keyword-faces
            '(
              ("INPROGRESS" . (:foreground "gold" :weight bold))
@@ -68,7 +66,9 @@
   (fci-mode 1)
 )
 
-
 (add-hook 'c++-mode-hook 'fci-hooks)
+
+
+(load "semantic-config")
 
 (desktop-save-mode 1)
