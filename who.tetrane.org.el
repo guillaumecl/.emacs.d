@@ -71,4 +71,6 @@
 
 (load "semantic-config")
 
+(semantic-add-system-include "/home/gclement/src/tetrane/reven")
+
 (desktop-save-mode 1)
