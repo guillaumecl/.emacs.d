@@ -44,10 +44,6 @@
 (setq qt4-base-dir "/usr/include/qt4")
 (semantic-add-system-include qt4-base-dir 'c++-mode)
 (add-to-list 'auto-mode-alist (cons qt4-base-dir 'c++-mode))
-;(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat qt4-base-dir "/Qt/qconfig.h"))
-;(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat qt4-base-dir "/Qt/qconfig-dist.h"))
-;(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat qt4-base-dir "/Qt/qglobal.h"))
-
 
 (defun ac-semantic-construct-candidates (tags)
   "Construct candidates from the list inside of tags."
