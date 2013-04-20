@@ -3,9 +3,12 @@
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/auto-complete/")
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-
-(load-theme 'zenburn t)
+(if (>= emacs-major-mode 24)
+	(progn
+	  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+	  (load-theme 'zenburn t)
+	)
+)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
