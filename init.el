@@ -3,7 +3,7 @@
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/auto-complete/")
 
-(if (>= emacs-major-mode 24)
+(if (>= emacs-major-version 24)
 	(progn
 	  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 	  (load-theme 'zenburn t)
