@@ -37,19 +37,24 @@
  '(tab-width 4)
  '(tool-bar-mode nil))
 
-(load "backups")
-(load "general")
-(load "programming")
-(load "reload")
-(load "ansi")
-(load "orgmode")
-(load "git")
-(load "mail")
-(load "jabbermode")
+(if (>= emacs-major-version 24)
+	(progn
 
-(require 'auto-recomp)
-(server-start)
-(require 'tramp)
+	  (load "backups")
+	  (load "general")
+	  (load "programming")
+	  (load "reload")
+	  (load "ansi")
+	  (load "orgmode")
+	  (load "git")
+	  (load "mail")
+	  (load "jabbermode")
+
+	  (require 'auto-recomp)
+	  (server-start)
+	  (require 'tramp)
+	  )
+  )
 
 (load (system-name))
 
