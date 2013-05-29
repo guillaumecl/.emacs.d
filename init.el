@@ -2,6 +2,7 @@
 (add-to-list 'load-path "~/.emacs.d/mingus/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/auto-complete/")
+(add-to-list 'load-path "~/.emacs.d/lua-mode/")
 
 (if (>= emacs-major-version 24)
 	(progn

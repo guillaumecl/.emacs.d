@@ -1,3 +1,6 @@
+(require 'lua-mode)
+(require 'cmake-mode)
+
 (setq jabber-alert-info-message-hooks nil)
 (setq jabber-alert-message-hooks nil)
 
@@ -6,15 +9,18 @@
 (setq org-agenda-files (list "~/src/tetrane/org"))
 (setq org-default-notes-file "~/src/tetrane/org")
 
+;; (set-frame-parameter (selected-frame) 'alpha '(80 80))
+;; (add-to-list 'default-frame-alist '(alpha 80 80))
 
-(setq ecb-compile-window-height 6)
-(setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
-(setq ecb-source-file-regexps (quote ((".*" ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\|pyo\\)$\\)\\)") ("^\\.\\(emacs\\|gnus\\)$")))))
-(setq ecb-source-path (quote ("/home/gclement/src/tetrane")))
-(setq ecb-tip-of-the-day nil)
-(setq ecb-tree-buffer-style (quote image))
-(setq ecb-windows-height 30)
-(setq ecb-windows-width 30)
+
+;; (setq ecb-compile-window-height 6)
+;; (setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
+;; (setq ecb-source-file-regexps (quote ((".*" ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\|pyo\\)$\\)\\)") ("^\\.\\(emacs\\|gnus\\)$")))))
+;; (setq ecb-source-path (quote ("/home/gclement/src/tetrane")))
+;; (setq ecb-tip-of-the-day nil)
+;; (setq ecb-tree-buffer-style (quote image))
+;; (setq ecb-windows-height 30)
+;; (setq ecb-windows-width 30)
 
 
 (setq compile-command "/home/gclement/src/tetrane/compile.sh")
@@ -28,10 +34,10 @@
 )
 
 (progn
-  (called-interactively-p)
+  (called-interactively-p noninteractive)
   (cd "/home/gclement/src/tetrane/reven"))
 
-(ecb-activate)
+;; (ecb-activate)
 
 (select-frame (make-frame '((name . "emacs_right"))))
 
@@ -69,8 +75,8 @@
 (add-hook 'c++-mode-hook 'fci-hooks)
 
 
-(load "semantic-config")
+;(load "semantic-config")
 
-(semantic-add-system-include "/home/gclement/src/tetrane/reven")
+;(semantic-add-system-include "/home/gclement/src/tetrane/reven")
 
 (desktop-save-mode 1)

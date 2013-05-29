@@ -1,6 +1,7 @@
 (require 'cmake-mode)
-(require 'semantic)
+;(require 'semantic)
 (require 'auto-complete)
+;(require 'auto-complete-clang)
 
 ; Show whitespaces at the end of lines.
 ; (setq-default show-trailing-whitespace t)
@@ -42,34 +43,34 @@
 (global-set-key (kbd "S-<f4>") 'previous-error)
 
 (setq qt4-base-dir "/usr/include/qt4")
-(semantic-add-system-include qt4-base-dir 'c++-mode)
+;(semantic-add-system-include qt4-base-dir 'c++-mode)
 (add-to-list 'auto-mode-alist (cons qt4-base-dir 'c++-mode))
 
-(defun ac-semantic-construct-candidates (tags)
-  "Construct candidates from the list inside of tags."
-  (apply 'append
-		 (mapcar (lambda (tag)
-				   (if (listp tag)
-					   (let ((type (semantic-tag-type tag))
-							 (class (semantic-tag-class tag))
-							 (name (semantic-tag-name tag)))
-						 (if (or (and (stringp type)
-									  (string= type "class"))
-								 (eq class 'function)
-								 (eq class 'variable))
-							 (list (list name type class))))))
-				 tags)))
+;; (defun ac-semantic-construct-candidates (tags)
+;;   "Construct candidates from the list inside of tags."
+;;   (apply 'append
+;; 		 (mapcar (lambda (tag)
+;; 				   (if (listp tag)
+;; 					   (let ((type (semantic-tag-type tag))
+;; 							 (class (semantic-tag-class tag))
+;; 							 (name (semantic-tag-name tag)))
+;; 						 (if (or (and (stringp type)
+;; 									  (string= type "class"))
+;; 								 (eq class 'function)
+;; 								 (eq class 'variable))
+;; 							 (list (list name type class))))))
+;; 				 tags)))
 
 
-(defvar ac-source-semantic-analysis nil)
-(setq ac-source-semantic
-	  `((sigil . "b")
-		(init . (lambda () (setq ac-source-semantic-analysis
-								 (condition-case nil
-									 (ac-semantic-construct-candidates (semantic-fetch-tags))))))
-		(candidates . (lambda ()
-						(if ac-source-semantic-analysis
-							(all-completions ac-target (mapcar 'car ac-source-semantic-analysis)))))))
+;; (defvar ac-source-semantic-analysis nil)
+;; (setq ac-source-semantic
+;; 	  `((sigil . "b")
+;; 		(init . (lambda () (setq ac-source-semantic-analysis
+;; 								 (condition-case nil
+;; 									 (ac-semantic-construct-candidates (semantic-fetch-tags))))))
+;; 		(candidates . (lambda ()
+;; 						(if ac-source-semantic-analysis
+;; 							(all-completions ac-target (mapcar 'car ac-source-semantic-analysis)))))))
 
 
 (defun c++-specific-hooks ()
@@ -81,13 +82,14 @@
   (setq show-trailing-whitespace t)
 ;  (hide-ifdef-mode)
 ; (add-to-list 'ac-sources 'ac-source-gtags)
-  (add-to-list 'ac-sources 'ac-source-semantic)
+;  (add-to-list 'ac-sources 'ac-source-semantic)
+;  (add-to-list 'ac-sources 'ac-source-clang)
   (auto-complete-mode)
 )
 
 (defun python-specific-hooks ()
   (setq show-trailing-whitespace t)
-  (add-to-list 'ac-sources 'ac-source-semantic)
+;  (add-to-list 'ac-sources 'ac-source-semantic)
   (auto-complete-mode)
 )
 
@@ -99,3 +101,27 @@
 ;(setq c-hungry-delete-key t);; will delete "hungrily" in C mode! Use it to see what it does -- very useful.
 
 ;(setq c-auto-newline 1);; will let emacs put in a "carriage-return" for you automatically after left curly braces, right curly braces, and semi-colons in "C mode" -- very useful.
+
+
+;; By an unknown contributor
+
+(global-set-key "%" 'match-paren)
+
+(defun match-paren (arg)
+  "Go to the matching paren if on a paren; otherwise insert %."
+  (interactive "p")
+  (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
+        ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
+        (t (self-insert-command (or arg 1)))))
+
+
+(add-to-list 'load-path (concat "" "AC"))
+
+
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories (concat "" "AC/ac-dict"))
+
+;(load "clang-completion-mode")
+
+
+(add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
