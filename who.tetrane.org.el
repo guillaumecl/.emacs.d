@@ -65,14 +65,14 @@
          ("\\.psp\\'" . python-mode)
          ) auto-mode-alist))
 
-(require 'fill-column-indicator)
+;; (require 'fill-column-indicator)
 
-(defun fci-hooks ()
-  (setq fci-rule-column 120)
-  (fci-mode 1)
-)
+;; (defun fci-hooks ()
+;;   (setq fci-rule-column 120)
+;;   (fci-mode 1)
+;; )
 
-(add-hook 'c++-mode-hook 'fci-hooks)
+;; (add-hook 'c++-mode-hook 'fci-hooks)
 
 
 ;(load "semantic-config")
@@ -80,3 +80,8 @@
 ;(semantic-add-system-include "/home/gclement/src/tetrane/reven")
 
 (desktop-save-mode 1)
+
+(require 'whitespace)
+(setq whitespace-line-column 120)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-whitespace-mode t)
