@@ -10,7 +10,7 @@
          "-stylesheet=/home/gclement/assistant.css"
          "-enableremotecontrol"))
     (process-send-string procname
-                         (format "activatekeyword %s;\n" (word-at-point)))
+                         (format "activatekeyword %s;\n" search))
 
     ))
 
