@@ -2,7 +2,7 @@
   "Assess documentation in an instance of Assistant."
   (interactive)
   (let* ((procname "qt-assistant")
-         (search (word-at-point)))
+         (search (symbol-at-point)))
     (if (not (process-status procname))
         (start-process
          procname procname
