@@ -60,7 +60,7 @@
 
 ;(other-window 1)
 
-(other-frame 1)
+;(other-frame 1)
 
 (load "mingus")
 
@@ -85,8 +85,6 @@
 ;(load "semantic-config")
 
 ;(semantic-add-system-include "/home/gclement/src/tetrane/reven")
-
-(desktop-save-mode 1)
 
 (require 'whitespace)
 (setq whitespace-line-column 120)

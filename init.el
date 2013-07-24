@@ -41,6 +41,11 @@
 (if (>= emacs-major-version 24)
 	(progn
 
+      (require 'server)
+      (if (not (server-running-p))
+          (server-start)
+        )
+
 	  (load "backups")
 	  (load "general")
 	  (load "programming")
@@ -52,7 +57,6 @@
 	  (load "jabbermode")
 
 	  (require 'auto-recomp)
-	  (server-start)
 	  (require 'tramp)
 	  )
 

@@ -88,3 +88,11 @@
   (set-window-dedicated-p (selected-window) sticky-buffer-mode))
 
 (delete-selection-mode)
+
+(defun running-as-server ()
+    "Returns true if `server-start' has been called."
+  (condition-case nil
+      (and (boundp 'server-process)
+           (memq (process-status server-process)
+                 '(connect listen open run)))
+    (error)))
