@@ -8,7 +8,10 @@
 (if (>= emacs-major-version 24)
 	(progn
 	  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-	  (load-theme 'zenburn t)
+
+      (if (not (string-equal system-name "odin.baobob.org"))
+          (load-theme 'zenburn t)
+        )
 	  )
   )
 
