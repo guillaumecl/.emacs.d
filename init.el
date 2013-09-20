@@ -4,6 +4,7 @@
 (add-to-list 'load-path "~/.emacs.d/auto-complete/")
 (add-to-list 'load-path "~/.emacs.d/lua-mode/")
 (add-to-list 'load-path "~/.emacs.d/machines/")
+(add-to-list 'load-path "~/.emacs.d/libs/")
 
 (if (>= emacs-major-version 24)
 	(progn
