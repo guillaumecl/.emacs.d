@@ -3,6 +3,7 @@
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/auto-complete/")
 (add-to-list 'load-path "~/.emacs.d/lua-mode/")
+(add-to-list 'load-path "~/.emacs.d/machines/")
 
 (if (>= emacs-major-version 24)
 	(progn
@@ -54,7 +55,6 @@
 	  (load "orgmode")
 	  (load "git")
 	  (load "mail")
-	  (load "jabbermode")
 
 	  (require 'auto-recomp)
 	  (require 'tramp)
@@ -69,3 +69,4 @@
   )
 
 (load (system-name))
+(put 'erase-buffer 'disabled nil)
