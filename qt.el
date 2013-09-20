@@ -8,6 +8,7 @@
          procname procname
          "assistant"
          "-stylesheet=/home/gclement/assistant.css"
+         "-stylesheet=/home/tortuxm/assistant.css"
          "-enableremotecontrol"))
     (process-send-string procname
                          (format "activatekeyword %s;\n" search))
