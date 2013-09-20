@@ -1,7 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/mingus/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
-(add-to-list 'load-path "~/.emacs.d/auto-complete/")
 (add-to-list 'load-path "~/.emacs.d/machines/")
 (add-to-list 'load-path "~/.emacs.d/libs/")
 
@@ -10,13 +8,14 @@
 	  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
       (if (not (string-equal system-name "odin.baobob.org"))
-          (load-theme 'zenburn t)
+	  (load-theme 'zenburn t)
+
         )
       (require 'package)
       (add-to-list 'package-archives
                    '("melpa" . "http://melpa.milkbox.net/packages/") t)
+	  (package-initialize)
 	  )
-  (package-initialize)
   )
 
 (custom-set-variables
@@ -47,25 +46,28 @@
  '(tool-bar-mode nil))
 
 (if (>= emacs-major-version 24)
-	(progn
+    (progn
 
       (require 'server)
       (if (not (server-running-p))
           (server-start)
         )
 
-	  (load "backups")
-	  (load "general")
-	  (load "programming")
-	  (load "reload")
-	  (load "ansi")
-	  (load "orgmode")
-	  (load "git")
-	  (load "mail")
+      (load "backups")
+      (load "general")
+      (load "programming")
+      (load "reload")
+      (load "ansi")
+      (load "orgmode")
+      (load "git")
+      (load "mail")
 
-	  (require 'auto-recomp)
-	  (require 'tramp)
-	  )
+      (require 'auto-recomp)
+      (require 'tramp)
+
+      (autoload 'color-theme-approximate-on "color-theme-approximate")
+      (color-theme-approximate-on)
+      )
 
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
