@@ -6,4 +6,5 @@ session*
 .emacs.desktop*
 tramp
 ac-comphist.dat
-
+elpa/*-readme.txt
+elpa/archives
