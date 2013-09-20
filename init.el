@@ -2,7 +2,6 @@
 (add-to-list 'load-path "~/.emacs.d/mingus/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/auto-complete/")
-(add-to-list 'load-path "~/.emacs.d/lua-mode/")
 (add-to-list 'load-path "~/.emacs.d/machines/")
 (add-to-list 'load-path "~/.emacs.d/libs/")
 
@@ -13,7 +12,11 @@
       (if (not (string-equal system-name "odin.baobob.org"))
           (load-theme 'zenburn t)
         )
+      (require 'package)
+      (add-to-list 'package-archives
+                   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 	  )
+  (package-initialize)
   )
 
 (custom-set-variables
