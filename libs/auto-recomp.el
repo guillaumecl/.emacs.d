@@ -43,9 +43,10 @@
 (make-variable-buffer-local 'auto-recompile)
 
 (defun auto-recompile-file-maybe ()
-;  (when auto-recompile
+  (when (not (string-match-p "console.el" buffer-file-name))
+	(message buffer-file-name)
     (byte-compile-file buffer-file-name))
-;)
+)
 
 (defun add-after-save-hook ()
   (add-hook 'after-save-hook 'auto-recompile-file-maybe nil t))

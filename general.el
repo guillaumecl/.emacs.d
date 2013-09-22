@@ -96,11 +96,3 @@
            (memq (process-status server-process)
                  '(connect listen open run)))
     (error)))
-
-
-(xterm-mouse-mode)
-
-;; Set symbol for the border
-(set-display-table-slot standard-display-table
-                        'vertical-border
-                        (make-glyph-code ?┃))

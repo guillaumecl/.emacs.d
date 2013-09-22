@@ -9,4 +9,5 @@ ac-comphist.dat
 elpa/*-readme.txt
 elpa/archives
 %backup%~
+console.elc
 
