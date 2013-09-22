@@ -96,3 +96,6 @@
            (memq (process-status server-process)
                  '(connect listen open run)))
     (error)))
+
+
+(xterm-mouse-mode)
