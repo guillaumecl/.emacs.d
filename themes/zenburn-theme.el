@@ -91,7 +91,7 @@
    `(link-visited ((t (:foreground ,zenburn-yellow-2 :underline t :weight normal))))
 
    ;;; basic coloring
-   `(default ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
+   `(default ((t (:foreground ,zenburn-fg ))))
    `(cursor ((t (:foreground ,zenburn-fg :background "white"))))
    `(escape-glyph-face ((t (:foreground ,zenburn-red))))
    `(fringe ((t (:foreground ,zenburn-fg :background ,zenburn-bg+1))))
