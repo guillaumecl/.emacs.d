@@ -59,6 +59,7 @@
       (load "orgmode")
       (load "git")
       (load "mail")
+      (load "console")
 
       (require 'auto-recomp)
       (require 'tramp)
