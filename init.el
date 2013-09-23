@@ -7,10 +7,8 @@
 	(progn
 	  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
-      (if (not (string-equal system-name "odin.baobob.org"))
 	  (load-theme 'zenburn t)
 
-        )
       (require 'package)
       (add-to-list 'package-archives
                    '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -64,9 +62,6 @@
 
       (require 'auto-recomp)
       (require 'tramp)
-
-      (autoload 'color-theme-approximate-on "color-theme-approximate")
-      (color-theme-approximate-on)
       )
 
   (custom-set-faces
