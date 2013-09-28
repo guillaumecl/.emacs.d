@@ -1,17 +1,27 @@
 (add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/mingus/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
+(add-to-list 'load-path "~/.emacs.d/machines/")
+(add-to-list 'load-path "~/.emacs.d/libs/")
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(if (>= emacs-major-version 24)
+	(progn
+	  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
-(load-theme 'zenburn t)
+	  (load-theme 'zenburn t)
+
+      (require 'package)
+      (add-to-list 'package-archives
+                   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+	  (package-initialize)
+	  )
+  )
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(c-default-style (quote ((awk-mode . "awk") (other . "linux"))) t)
+ '(c-default-style (quote ((awk-mode . "awk") (other . "linux"))))
  '(c-objc-method-arg-unfinished-offset 8)
  '(c-objc-method-parameter-offset 8)
  '(display-time-24hr-format t)
@@ -25,6 +35,7 @@
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
  '(menu-bar-mode nil)
+ '(python-guess-indent nil)
  '(scroll-bar-mode nil)
  '(shift-select-mode t)
  '(show-paren-mode t)
@@ -32,25 +43,35 @@
  '(tab-width 4)
  '(tool-bar-mode nil))
 
-(load "backups")
-(load "general")
-(load "programming")
-(load "reload")
-(load "ansi")
-(load "orgmode")
-(load "git")
-(load "mail")
-(load "jabbermode")
+(if (>= emacs-major-version 24)
+    (progn
 
-(require 'auto-recomp)
-(server-start)
-(require 'tramp)
+      (require 'server)
+      (if (not (server-running-p))
+          (server-start)
+        )
+
+      (load "backups")
+      (load "general")
+      (load "programming")
+      (load "reload")
+      (load "ansi")
+      (load "orgmode")
+      (load "git")
+      (load "mail")
+      (load "console")
+
+      (require 'auto-recomp)
+      (require 'tramp)
+      )
+
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 122 :width normal)))))
+  )
 
 (load (system-name))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 122 :width normal)))))
+(put 'erase-buffer 'disabled nil)
