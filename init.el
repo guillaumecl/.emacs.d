@@ -46,11 +46,6 @@
 (if (>= emacs-major-version 24)
     (progn
 
-      (require 'server)
-      (if (not (server-running-p))
-          (server-start)
-        )
-
       (load "backups")
       (load "general")
       (load "programming")
@@ -63,6 +58,13 @@
 
       (require 'auto-recomp)
       (require 'tramp)
+
+      (require 'server)
+
+      (if (not (server-running-p))
+          (server-start)
+        )
+
       )
 
   (custom-set-faces
@@ -74,4 +76,4 @@
   )
 
 (load (system-name))
-(put 'erase-buffer 'disabled nil)
+(put 'downcase-region 'disabled nil)
