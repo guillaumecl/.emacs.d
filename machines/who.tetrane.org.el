@@ -34,3 +34,13 @@
 (setq whitespace-line-column 120)
 (setq whitespace-style '(face lines-tail trailing))
 (global-whitespace-mode t)
+
+
+(defun reven-hooks ()
+  (setq indent-tabs-mode nil)
+)
+
+
+(add-hook 'c++-mode-hook 'reven-hooks)
+
+(add-hook 'python-mode-hook 'reven-hooks)
