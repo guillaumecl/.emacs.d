@@ -3,6 +3,8 @@
 (require (quote uniquify))
 (setq uniquify-buffer-name-style (quote post-forward))
 
+(global-set-key (kbd "<down-mouse-20>") 'buffer-menu)
+
 (global-set-key (kbd "C-<tab>") 'other-frame)
 (global-set-key (kbd "<backtab>") 'other-window)
 (global-set-key (kbd "<C-S-iso-lefttab>") 'other-window)
