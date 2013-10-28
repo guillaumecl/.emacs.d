@@ -4,7 +4,7 @@
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
 ;;;### (autoloads (rainbow-mode) "rainbow-mode" "rainbow-mode.el"
-;;;;;;  (21052 13852 269643 358000))
+;;;;;;  (21102 35232 922006 534000))
 ;;; Generated autoloads from rainbow-mode.el
 
 (autoload 'rainbow-mode "rainbow-mode" "\
@@ -15,8 +15,8 @@ This will fontify with colors the string like \"#aabbcc\" or \"blue\".
 
 ;;;***
 
-;;;### (autoloads nil nil ("rainbow-mode-pkg.el") (21052 13852 280516
-;;;;;;  948000))
+;;;### (autoloads nil nil ("rainbow-mode-pkg.el") (21102 35232 935483
+;;;;;;  788000))
 
 ;;;***
 

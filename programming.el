@@ -1,5 +1,6 @@
 (require 'cmake-mode)
 (require 'auto-complete)
+(require 'project-explorer)
 
 
 ; Remove trailing whitespaces on save.
@@ -80,4 +81,20 @@
 (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
 
 
+(defun toggle-explorer()
+  (interactive)
+  (let ((b (get-buffer "*project-explorer*")
+           ))
+    (if b
+        (kill-buffer b)
+      (project-explorer-open)
+      )
+    )
+  )
+
+(global-set-key (kbd "<f3>") 'toggle-explorer)
+
+
 (load "qt")
+
+;(project-explorer-open)
