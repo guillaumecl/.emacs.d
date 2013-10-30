@@ -98,3 +98,9 @@
            (memq (process-status server-process)
                  '(connect listen open run)))
     (error)))
+
+(global-set-key (kbd "C-<prior>") 'shrink-window)
+(global-set-key (kbd "C-<next>") 'enlarge-window)
+
+(global-set-key (kbd "ESC C-<prior>") 'shrink-window-horizontally)
+(global-set-key (kbd "ESC C-<next>") 'enlarge-window-horizontally)
