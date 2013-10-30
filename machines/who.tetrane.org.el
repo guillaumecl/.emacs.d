@@ -44,5 +44,3 @@
 (add-hook 'c++-mode-hook 'reven-hooks)
 
 (add-hook 'python-mode-hook 'reven-hooks)
-
-(global-set-key (kbd "<clearline>") 'end-of-buffer)
