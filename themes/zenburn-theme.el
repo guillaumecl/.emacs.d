@@ -91,7 +91,7 @@
    `(link-visited ((t (:foreground ,zenburn-yellow-2 :underline t :weight normal))))
 
    ;;; basic coloring
-   `(default ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
+   `(default ((t (:foreground ,zenburn-fg ))))
    `(cursor ((t (:foreground ,zenburn-fg :background "white"))))
    `(escape-glyph-face ((t (:foreground ,zenburn-red))))
    `(fringe ((t (:foreground ,zenburn-fg :background ,zenburn-bg+1))))
@@ -141,7 +141,7 @@
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zenburn-bg+2))))
    `(trailing-whitespace ((t (:background ,zenburn-red))))
-   `(vertical-border ((t (:foreground ,zenburn-fg))))
+   `(vertical-border ((t (:foreground ,zenburn-bg))))
 
    ;;; font lock
    `(font-lock-builtin-face ((t (:foreground ,zenburn-cyan))))
@@ -543,6 +543,25 @@
    `(tabbar-unselected ((t (:foreground ,zenburn-fg
                                         :background ,zenburn-bg+1
                                         :box (:line-width -1 :style released-button)))))
+    ;;;;; term
+   `(term-color-black ((t (:foreground ,zenburn-bg
+                                       :background ,zenburn-bg-1))))
+   `(term-color-red ((t (:foreground ,zenburn-red-2
+                                       :background ,zenburn-red-4))))
+   `(term-color-green ((t (:foreground ,zenburn-green
+                                       :background ,zenburn-green+2))))
+   `(term-color-yellow ((t (:foreground ,zenburn-orange
+                                       :background ,zenburn-yellow))))
+   `(term-color-blue ((t (:foreground ,zenburn-blue-1
+                                      :background ,zenburn-blue-4))))
+   `(term-color-magenta ((t (:foreground ,zenburn-magenta
+                                         :background ,zenburn-red))))
+   `(term-color-cyan ((t (:foreground ,zenburn-cyan
+                                       :background ,zenburn-blue))))
+   `(term-color-white ((t (:foreground ,zenburn-fg
+                                       :background ,zenburn-fg-1))))
+   '(term-default-fg-color ((t (:inherit term-color-white))))
+   '(term-default-bg-color ((t (:inherit term-color-black))))
 
    ;; volatile-highlights
    `(vhl/default-face ((t (:background ,zenburn-bg+1))))
@@ -621,10 +640,12 @@
    `(fci-rule-color ,zenburn-bg-05))
 
   ;;; colors for the ansi-term
-  (eval-after-load 'term
-    `(setq ansi-term-color-vector
-           (vector 'unspecified ,zenburn-bg ,zenburn-red ,zenburn-green ,zenburn-yellow
-                   ,zenburn-blue ,zenburn-magenta ,zenburn-cyan ,zenburn-fg))))
+  ;; (eval-after-load 'term
+  ;;   `(setq ansi-term-color-vector
+  ;;          (vector 'unspecified ,zenburn-bg ,zenburn-red ,zenburn-green ,zenburn-yellow
+  ;;                  ,zenburn-blue ,zenburn-magenta ,zenburn-cyan ,zenburn-fg)))
+
+  )
 
 ;;;###autoload
 (and load-file-name

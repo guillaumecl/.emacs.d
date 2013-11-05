@@ -1,14 +1,20 @@
 (add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/mingus/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
-(add-to-list 'load-path "~/.emacs.d/auto-complete/")
+(add-to-list 'load-path "~/.emacs.d/machines/")
+(add-to-list 'load-path "~/.emacs.d/libs/")
 
 (if (>= emacs-major-version 24)
 	(progn
 	  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
 	  (load-theme 'zenburn t)
-	)
-)
+
+      (require 'package)
+      (add-to-list 'package-archives
+                   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+	  (package-initialize)
+	  )
+  )
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -38,29 +44,37 @@
  '(tool-bar-mode nil))
 
 (if (>= emacs-major-version 24)
-	(progn
+    (progn
 
-	  (load "backups")
-	  (load "general")
-	  (load "programming")
-	  (load "reload")
-	  (load "ansi")
-	  (load "orgmode")
-	  (load "git")
-	  (load "mail")
-	  (load "jabbermode")
+      (load "backups")
+      (load "general")
+      (load "programming")
+      (load "reload")
+      (load "ansi")
+      (load "orgmode")
+      (load "git")
+      (load "mail")
+      (load "console")
 
-	  (require 'auto-recomp)
-	  (server-start)
-	  (require 'tramp)
-	  )
+      (require 'auto-recomp)
+      (require 'tramp)
+
+      (require 'server)
+
+      (if (not (server-running-p))
+          (server-start)
+        )
+
+      )
+
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 122 :width normal)))))
   )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 122 :width normal)))))
 
 (load (system-name))
 
+(put 'downcase-region 'disabled nil)

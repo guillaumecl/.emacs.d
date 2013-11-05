@@ -23,3 +23,6 @@
 ;; vc.el - add commands to push and pull with git
 (progn
   (define-key vc-prefix-map "p" 'vc-push-or-pull))
+
+
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . diff-mode))

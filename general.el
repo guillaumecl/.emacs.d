@@ -3,6 +3,8 @@
 (require (quote uniquify))
 (setq uniquify-buffer-name-style (quote post-forward))
 
+(global-set-key (kbd "<down-mouse-20>") 'buffer-menu)
+
 (global-set-key (kbd "C-<tab>") 'other-frame)
 (global-set-key (kbd "<backtab>") 'other-window)
 (global-set-key (kbd "<C-S-iso-lefttab>") 'other-window)
@@ -88,3 +90,17 @@
   (set-window-dedicated-p (selected-window) sticky-buffer-mode))
 
 (delete-selection-mode)
+
+(defun running-as-server ()
+    "Returns true if `server-start' has been called."
+  (condition-case nil
+      (and (boundp 'server-process)
+           (memq (process-status server-process)
+                 '(connect listen open run)))
+    (error)))
+
+(global-set-key (kbd "C-<prior>") 'shrink-window)
+(global-set-key (kbd "C-<next>") 'enlarge-window)
+
+(global-set-key (kbd "ESC C-<prior>") 'shrink-window-horizontally)
+(global-set-key (kbd "ESC C-<next>") 'enlarge-window-horizontally)
