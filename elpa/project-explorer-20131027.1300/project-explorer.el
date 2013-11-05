@@ -49,7 +49,7 @@
           (const :tag "Left" left)
           (const :tag "Right" right)))
 
-(defcustom pe/width 40
+(defcustom pe/width 20
   "Width of the side-bar."
   :group 'project-explorer
   :type 'integer)
