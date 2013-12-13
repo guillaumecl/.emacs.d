@@ -39,6 +39,17 @@
 (setq qt4-base-dir "/usr/include/qt4")
 (add-to-list 'auto-mode-alist (cons qt4-base-dir 'c++-mode))
 
+(defun insert-infinf()
+  (interactive)
+  (insert "<<")
+)
+
+(defun insert-supsup()
+  (interactive)
+  (insert ">>")
+)
+
+
 (defun c++-specific-hooks ()
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-close 0)
@@ -47,6 +58,9 @@
   (c-set-offset 'innamespace 0)
   (setq show-trailing-whitespace t)
   (auto-complete-mode)
+
+  (local-set-key (kbd "«") 'insert-infinf)
+  (local-set-key (kbd "»") 'insert-supsup)
 )
 
 (defun python-specific-hooks ()
