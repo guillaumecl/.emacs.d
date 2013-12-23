@@ -82,6 +82,8 @@
 (global-set-key (kbd "M-<up>") 'move-line-region-up)
 (global-set-key (kbd "M-<down>") 'move-line-region-down)
 
+(global-set-key (kbd "ESC <up>") 'move-line-region-up)
+(global-set-key (kbd "ESC <down>") 'move-line-region-down)
 
 
 (define-minor-mode sticky-buffer-mode
