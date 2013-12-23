@@ -91,7 +91,7 @@
   nil " sticky" nil
   (set-window-dedicated-p (selected-window) sticky-buffer-mode))
 
-(delete-selection-mode)
+(delete-selection-mode t)
 
 (defun running-as-server ()
     "Returns true if `server-start' has been called."
