@@ -21,6 +21,9 @@
 (global-set-key (kbd "M-S-<up>") 'scroll-down-line)
 (global-set-key (kbd "M-S-<down>") 'scroll-up-line)
 
+(global-set-key (kbd "ESC S-<up>") 'scroll-down-line)
+(global-set-key (kbd "ESC S-<down>") 'scroll-up-line)
+
 
 (global-set-key (kbd "C-<left>") 'subword-backward)
 (global-set-key (kbd "C-<right>") 'subword-forward)
