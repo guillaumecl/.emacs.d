@@ -25,9 +25,6 @@
 (global-set-key (kbd "ESC S-<down>") 'scroll-up-line)
 
 
-(global-set-key (kbd "C-<left>") 'subword-backward)
-(global-set-key (kbd "C-<right>") 'subword-forward)
-
 (global-set-key (kbd "<f6>") 'mingus)
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -36,8 +33,6 @@
 (global-set-key "\C-xab" '(lambda ()(interactive)(ansi-term "/bin/bash")))
 (global-set-key "\C-xap" 'python-shell)
 (global-set-key "\C-xar" 'rename-buffer)
-
-(global-subword-mode)
 
 (setq kill-whole-line t);; will make "Ctrl-k" kills an entire line if the cursor is at the beginning of line -- very useful.
 
@@ -109,3 +104,5 @@
 
 (global-set-key (kbd "ESC C-<prior>") 'shrink-window-horizontally)
 (global-set-key (kbd "ESC C-<next>") 'enlarge-window-horizontally)
+
+(auto-insert-mode t)

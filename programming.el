@@ -126,6 +126,5 @@ downcased, no preceding underscore.
 
 
 (load "qt")
-(load "templates")
 
 ;(project-explorer-open)
