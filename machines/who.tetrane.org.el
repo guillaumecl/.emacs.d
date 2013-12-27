@@ -41,8 +41,11 @@
 )
 
 
-(add-hook 'c++-mode-hook 'reven-hooks)
+(add-hook 'cc-mode-hook 'reven-hooks)
 
 (add-hook 'python-mode-hook 'reven-hooks)
 
 (load "templates_who")
+
+(require 'yasnippet)
+(yas-global-mode 1)

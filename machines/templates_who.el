@@ -39,21 +39,21 @@
   '(nil
 	(let* ((noext (substring buffer-file-name 0 (match-beginning 0)))
 		   (nopath (file-name-nondirectory noext))
-		   (ident (concat nopath ".h")))
+		   (ident (concat nopath ".h"))
            (module (find-module buffer-file-name))
-           (id_module (upcase module))
-	  (concat "#include \"" ident "\"\n"
-			  "\n\n\n"
-			  "namespace reven {\n"
-			  "namespace " module " {\n"
-			  "\n\n\n"
-			  nopath "::" nopath "()\n"
-			  "{\n"
-			  "}\n"
-			  "\n\n\n"
-			  "}} // namespace reven::" module "\n"
-			  ))
-	))
+           (id_module (upcase module)))
+    (concat "#include \"" ident "\"\n"
+            "\n\n\n"
+            "namespace reven {\n"
+            "namespace " module " {\n"
+            "\n\n\n"
+            nopath "::" nopath "()\n"
+            "{\n"
+            "}\n"
+            "\n\n\n"
+            "}} // namespace reven::" module "\n"
+            ))
+  ))
 
 
 (auto-insert-mode)

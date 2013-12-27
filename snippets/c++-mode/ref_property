@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: ref_property
+# key: rprop
+# --
+${1:Type} ${2:member_name}_;
+
+const $1& $2() const { return $2_; }
+void set_$2(const $1& $2) { $2_ = $2; }
+ $0
