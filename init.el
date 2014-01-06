@@ -4,16 +4,17 @@
 (add-to-list 'load-path "~/.emacs.d/libs/")
 
 (if (>= emacs-major-version 24)
-	(progn
-	  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+  (progn
+    (require 'package)
+    (add-to-list 'package-archives
+		 '("melpa" . "http://melpa.milkbox.net/packages/") t)
+    (package-initialize)
 
-	  (load-theme 'zenburn t)
+    (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
-      (require 'package)
-      (add-to-list 'package-archives
-                   '("melpa" . "http://melpa.milkbox.net/packages/") t)
-	  (package-initialize)
-	  )
+    (load-theme 'alect-dark t)
+
+    )
   )
 
 (custom-set-variables
