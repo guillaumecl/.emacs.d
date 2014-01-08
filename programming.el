@@ -48,19 +48,14 @@
   (insert ">>")
 )
 
-(add-hook 'c-mode-common-hook
-          (function (lambda ()
-                      (local-set-key (kbd "M-<tab>") 'dabbrev-expand)
-                      (local-set-key (kbd "C-M-i") 'dabbrev-expand)
-                      )))
-
-(defun cc-specific-hooks ()
+(defun c-specific-hooks ()
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-close 0)
   (c-set-offset 'substatement-open '0)
   (c-set-offset 'inline-open 0)
   (c-set-offset 'innamespace 0)
   (local-set-key (kbd "C-M-i") 'dabbrev-expand)
+  (local-set-key (kbd "M-<tab>") 'dabbrev-expand)
   (setq show-trailing-whitespace t)
 
   (local-set-key (kbd "«") 'insert-infinf)
@@ -72,7 +67,7 @@
 )
 
 
-(add-hook 'cc-mode-hook 'cc-specific-hooks)
+(add-hook 'c-mode-common-hook 'c-specific-hooks)
 
 (add-hook 'python-mode-hook 'python-specific-hooks)
 
