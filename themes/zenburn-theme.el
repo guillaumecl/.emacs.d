@@ -141,7 +141,7 @@
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zenburn-bg+2))))
    `(trailing-whitespace ((t (:background ,zenburn-red))))
-   `(vertical-border ((t (:foreground ,zenburn-bg))))
+   `(vertical-border ((t (:foreground ,zenburn-bg+1))))
 
    ;;; font lock
    `(font-lock-builtin-face ((t (:foreground ,zenburn-cyan))))
