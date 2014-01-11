@@ -21,9 +21,9 @@
 (global-set-key (kbd "M-S-<up>") 'scroll-down-line)
 (global-set-key (kbd "M-S-<down>") 'scroll-up-line)
 
+(global-set-key (kbd "ESC S-<up>") 'scroll-down-line)
+(global-set-key (kbd "ESC S-<down>") 'scroll-up-line)
 
-(global-set-key (kbd "C-<left>") 'subword-backward)
-(global-set-key (kbd "C-<right>") 'subword-forward)
 
 (global-set-key (kbd "<f6>") 'mingus)
 
@@ -33,8 +33,6 @@
 (global-set-key "\C-xab" '(lambda ()(interactive)(ansi-term "/bin/bash")))
 (global-set-key "\C-xap" 'python-shell)
 (global-set-key "\C-xar" 'rename-buffer)
-
-(global-subword-mode)
 
 (setq kill-whole-line t);; will make "Ctrl-k" kills an entire line if the cursor is at the beginning of line -- very useful.
 
@@ -82,6 +80,8 @@
 (global-set-key (kbd "M-<up>") 'move-line-region-up)
 (global-set-key (kbd "M-<down>") 'move-line-region-down)
 
+(global-set-key (kbd "ESC <up>") 'move-line-region-up)
+(global-set-key (kbd "ESC <down>") 'move-line-region-down)
 
 
 (define-minor-mode sticky-buffer-mode
@@ -89,7 +89,7 @@
   nil " sticky" nil
   (set-window-dedicated-p (selected-window) sticky-buffer-mode))
 
-(delete-selection-mode)
+(delete-selection-mode t)
 
 (defun running-as-server ()
     "Returns true if `server-start' has been called."
@@ -104,3 +104,5 @@
 
 (global-set-key (kbd "ESC C-<prior>") 'shrink-window-horizontally)
 (global-set-key (kbd "ESC C-<next>") 'enlarge-window-horizontally)
+
+(auto-insert-mode t)

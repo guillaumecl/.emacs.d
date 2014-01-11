@@ -1,4 +1,4 @@
-;;; zenburn-theme.el --- A low contrast color theme for Emacs.
+ ;;; zenburn-theme.el --- A low contrast color theme for Emacs.
 
 ;; Copyright (C) 2011 Bozhidar Batsov
 
@@ -544,22 +544,14 @@
                                         :background ,zenburn-bg+1
                                         :box (:line-width -1 :style released-button)))))
     ;;;;; term
-   `(term-color-black ((t (:foreground ,zenburn-bg
-                                       :background ,zenburn-bg-1))))
-   `(term-color-red ((t (:foreground ,zenburn-red-2
-                                       :background ,zenburn-red-4))))
-   `(term-color-green ((t (:foreground ,zenburn-green
-                                       :background ,zenburn-green+2))))
-   `(term-color-yellow ((t (:foreground ,zenburn-orange
-                                       :background ,zenburn-yellow))))
-   `(term-color-blue ((t (:foreground ,zenburn-blue-1
-                                      :background ,zenburn-blue-4))))
-   `(term-color-magenta ((t (:foreground ,zenburn-magenta
-                                         :background ,zenburn-red))))
-   `(term-color-cyan ((t (:foreground ,zenburn-cyan
-                                       :background ,zenburn-blue))))
-   `(term-color-white ((t (:foreground ,zenburn-fg
-                                       :background ,zenburn-fg-1))))
+   `(term-color-black   ((t (:foreground ,"#6a6a6a" :background ,"#676767"))))
+   `(term-color-red     ((t (:foreground ,"#FF5555" :background ,"#e01010"))))
+   `(term-color-green   ((t (:foreground ,"#90EE90" :background ,"#00AA00"))))
+   `(term-color-yellow  ((t (:foreground ,"#ffff2f" :background ,"#FFFF00"))))
+   `(term-color-blue    ((t (:foreground ,"#5B5BC7" :background ,"#112037"))))
+   `(term-color-magenta ((t (:foreground ,"#e628ba" :background ,"#A020F0"))))
+   `(term-color-cyan    ((t (:foreground ,"#7D7DFB" :background ,"#5B5BC7"))))
+   `(term-color-white   ((t (:foreground ,"#fefefe" :background ,"#ffffff"))))
    '(term-default-fg-color ((t (:inherit term-color-white))))
    '(term-default-bg-color ((t (:inherit term-color-black))))
 

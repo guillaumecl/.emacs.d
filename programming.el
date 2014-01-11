@@ -1,5 +1,4 @@
 (require 'cmake-mode)
-(require 'auto-complete)
 (require 'project-explorer)
 
 
@@ -49,15 +48,15 @@
   (insert ">>")
 )
 
-
-(defun c++-specific-hooks ()
+(defun c-specific-hooks ()
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-close 0)
   (c-set-offset 'substatement-open '0)
   (c-set-offset 'inline-open 0)
   (c-set-offset 'innamespace 0)
+  (local-set-key (kbd "C-M-i") 'dabbrev-expand)
+  (local-set-key (kbd "M-<tab>") 'dabbrev-expand)
   (setq show-trailing-whitespace t)
-  (auto-complete-mode)
 
   (local-set-key (kbd "«") 'insert-infinf)
   (local-set-key (kbd "»") 'insert-supsup)
@@ -65,11 +64,10 @@
 
 (defun python-specific-hooks ()
   (setq show-trailing-whitespace t)
-  (auto-complete-mode)
 )
 
 
-(add-hook 'c++-mode-hook 'c++-specific-hooks)
+(add-hook 'c-mode-common-hook 'c-specific-hooks)
 
 (add-hook 'python-mode-hook 'python-specific-hooks)
 
@@ -83,16 +81,6 @@
   (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
         ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
         (t (self-insert-command (or arg 1)))))
-
-
-(add-to-list 'load-path (concat "" "AC"))
-
-
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories (concat "" "AC/ac-dict"))
-
-
-(add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
 
 
 (defun toggle-explorer()

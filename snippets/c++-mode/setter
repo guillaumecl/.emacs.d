@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: setter
+# key: setter
+# --
+inline void ${1:class}::set_${2:member_name}(${3:Type} $2) { $2_ = $2; }
