@@ -49,3 +49,5 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
+
+(global-unset-key (kbd "C-z"))

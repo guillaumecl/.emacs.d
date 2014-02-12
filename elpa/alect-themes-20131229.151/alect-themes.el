@@ -1119,7 +1119,7 @@ For INVERT, see `alect-get-color'."
                                         :foreground ,(gc 'blue-2))))
        (whitespace-newline          ((t :foreground ,(gc 'blue-2))))
        (whitespace-trailing         ((t :background ,(gc 'red))))
-       (whitespace-line             ((t :background ,(gc 'gray)
+       (whitespace-line             ((t :background ,(gc 'red)
                                         :foreground ,(gc 'gray-2))))
        (whitespace-space-before-tab ((t :background ,(gc 'fg-2)
                                         :foreground ,(gc 'fg-2))))
