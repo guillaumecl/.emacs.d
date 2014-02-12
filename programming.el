@@ -116,3 +116,13 @@ downcased, no preceding underscore.
 (load "qt")
 
 ;(project-explorer-open)
+
+
+(require 'ctags)
+(setq tags-revert-without-query t)
+(global-set-key (kbd "<f7>") 'ctags-create-or-update-tags-table)
+(global-set-key (kbd "M-.")  'ctags-search)
+
+
+(require 'nasm-mode)
+(add-to-list 'auto-mode-alist '("\\.\\(asm|nasm|s\\)$" . nasm-mode))
