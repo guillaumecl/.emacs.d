@@ -125,4 +125,10 @@ downcased, no preceding underscore.
 
 
 (require 'nasm-mode)
-(add-to-list 'auto-mode-alist '("\\.\\(asm|nasm|s\\)$" . nasm-mode))
+
+(setq auto-mode-alist
+      (append
+       '(
+         ("\\.asm\\'" . nasm-mode)
+         ("\\.nasm\\'" . nasm-mode)
+         ) auto-mode-alist))
