@@ -22,7 +22,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(c-default-style (quote ((awk-mode . "awk") (other . "linux"))))
+ '(c-default-style (quote ((awk-mode . "awk") (other . "linux"))) t)
  '(c-objc-method-arg-unfinished-offset 8)
  '(c-objc-method-parameter-offset 8)
  '(display-time-24hr-format t)
@@ -40,6 +40,7 @@
  '(scroll-bar-mode nil)
  '(shift-select-mode t)
  '(show-paren-mode t)
+ '(sr-speedbar-right-side nil)
  '(standard-indent 8)
  '(tab-width 4)
  '(tool-bar-mode nil))
@@ -79,3 +80,9 @@
 (load (system-name))
 
 (put 'downcase-region 'disabled nil)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
