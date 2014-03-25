@@ -122,3 +122,13 @@ downcased, no preceding underscore.
 (load "qt")
 
 ;(project-explorer-open)
+
+
+(require 'nasm-mode)
+
+(setq auto-mode-alist
+      (append
+       '(
+         ("\\.asm\\'" . nasm-mode)
+         ("\\.nasm\\'" . nasm-mode)
+         ) auto-mode-alist))
