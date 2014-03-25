@@ -32,6 +32,7 @@
 
 (global-set-key (kbd "<f8>") 'recompile)
 (global-set-key (kbd "S-<f8>") 'compile)
+(global-set-key (kbd "<f18>") 'compile)
 (global-set-key (kbd "<f4>") 'next-error)
 (global-set-key (kbd "S-<f4>") 'previous-error)
 
