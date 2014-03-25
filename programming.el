@@ -114,6 +114,11 @@ downcased, no preceding underscore.
 (global-set-key (kbd "<f3>") 'toggle-explorer)
 
 
+(global-set-key (kbd "M-.") 'gtags-find-symbol)
+
+
+(add-hook 'c-mode-common-hook 'gtags-mode)
+
 (load "qt")
 
 ;(project-explorer-open)
