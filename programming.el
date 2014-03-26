@@ -49,7 +49,7 @@
   (insert ">>")
 )
 
-(require 'gtags)
+(require 'ggtags)
 
 (defun c-specific-hooks ()
   (c-set-offset 'arglist-intro '+)
@@ -63,7 +63,7 @@
 
   (local-set-key (kbd "«") 'insert-infinf)
   (local-set-key (kbd "»") 'insert-supsup)
-  (gtags-mode t)
+  (ggtags-mode t)
 )
 
 (defun python-specific-hooks ()
@@ -117,7 +117,7 @@ downcased, no preceding underscore.
 (global-set-key (kbd "<f3>") 'toggle-explorer)
 
 
-(global-set-key (kbd "M-.") 'gtags-find-symbol)
+;(global-set-key (kbd "M-.") 'gtags-find-symbol)
 
 (load "qt")
 
