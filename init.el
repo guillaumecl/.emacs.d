@@ -42,7 +42,7 @@
  '(show-paren-mode t)
  '(sr-speedbar-right-side nil)
  '(standard-indent 8)
- '(tab-width 4)
+ '(tab-width 8)
  '(tool-bar-mode nil))
 
 (if (>= emacs-major-version 24)

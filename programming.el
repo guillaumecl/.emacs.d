@@ -24,8 +24,6 @@
          ("\\.kmk\\'" . makefile-mode)
          ) auto-mode-alist))
 
-(setq c-default-style "linux" c-basic-offset 4)
-
 (setq stack-trace-on-error t)
 
 (global-set-key (kbd "C-c h") 'ff-find-other-file)
