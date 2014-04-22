@@ -51,3 +51,9 @@
 (yas-global-mode 1)
 
 (global-unset-key (kbd "C-z"))
+
+(require 'org-redmine)
+(setq org-redmine-auth-api-key "9703b888cda28da153897de167d738d83b0a3095")
+(setq org-redmine-uri "https://rojack/redmine/")
+
+(add-to-list 'auto-mode-alist '("hg-editor-*" . diff-mode))

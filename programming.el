@@ -61,6 +61,12 @@
 
   (local-set-key (kbd "«") 'insert-infinf)
   (local-set-key (kbd "»") 'insert-supsup)
+  (local-set-key (kbd "C-<up>") 'backward-sentence)
+  (local-set-key (kbd "C-<down>") 'forward-sentence)
+  (local-set-key (kbd "C-M-<up>") 'backward-paragraph)
+  (local-set-key (kbd "C-M-<down>") 'forward-paragraph)
+  (local-set-key (kbd "ESC C-<up>") 'backward-paragraph)
+  (local-set-key (kbd "ESC C-<down>") 'forward-paragraph)
   (ggtags-mode t)
 )
 
