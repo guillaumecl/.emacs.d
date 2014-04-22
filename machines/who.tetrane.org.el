@@ -38,10 +38,11 @@
 
 (defun reven-hooks ()
   (setq indent-tabs-mode nil)
+  (setq c-basic-offset 4)
 )
 
 
-(add-hook 'cc-mode-hook 'reven-hooks)
+(add-hook 'c-mode-common-hook 'reven-hooks)
 
 (add-hook 'python-mode-hook 'reven-hooks)
 
@@ -57,3 +58,7 @@
 (setq org-redmine-uri "https://rojack/redmine/")
 
 (add-to-list 'auto-mode-alist '("hg-editor-*" . diff-mode))
+
+
+(setq standard-indent 4)
+(setq tab-width 4)
