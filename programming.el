@@ -55,6 +55,7 @@
   (c-set-offset 'substatement-open '0)
   (c-set-offset 'inline-open 0)
   (c-set-offset 'innamespace 0)
+  (c-set-offset 'arglist-cont-nonempty '+)
   (local-set-key (kbd "C-M-i") 'dabbrev-expand)
   (local-set-key (kbd "M-<tab>") 'dabbrev-expand)
   (setq show-trailing-whitespace t)
