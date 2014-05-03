@@ -1,2 +1,2 @@
-
-(setq compile-command "make -k -j2 -C ~/projets/build/tmpc")
+(global-set-key (kbd "<f8>") 'compile-current-project)
+(global-set-key (kbd "S-<f8>") 'compile-current-project)

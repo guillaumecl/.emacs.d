@@ -28,8 +28,8 @@
 
 (global-set-key (kbd "C-c h") 'ff-find-other-file)
 
-(global-set-key (kbd "<f8>") 'recompile)
-(global-set-key (kbd "S-<f8>") 'compile)
+;(global-set-key (kbd "<f8>") 'recompile)
+;(global-set-key (kbd "S-<f8>") 'compile)
 (global-set-key (kbd "<f18>") 'compile)
 (global-set-key (kbd "<f4>") 'next-error)
 (global-set-key (kbd "S-<f4>") 'previous-error)
@@ -137,3 +137,43 @@ downcased, no preceding underscore.
          ("\\.asm\\'" . nasm-mode)
          ("\\.nasm\\'" . nasm-mode)
          ) auto-mode-alist))
+
+(defun find-project-name ()
+  (let ((file (buffer-file-name)))
+    (when file
+	(when
+	    (string-match "projets/\\([a-zA-Z0-9_\\-]*\\)/" (buffer-file-name))
+	    (match-string 1 (buffer-file-name)))
+      )
+    )
+  )
+
+(defun find-project-dir (project)
+  (when project
+    (let ((build-dir (expand-file-name project "~/projets/build"))
+	  (src-dir (expand-file-name project "~/projets")))
+      (if (file-exists-p build-dir)
+	  build-dir
+	src-dir))
+    )
+  )
+
+(defun compile-current-project ()
+  (interactive)
+  (let ((project-dir (find-project-dir (find-project-name))))
+    (message (concat "Project: " project-dir))
+    (if project-dir
+	(progn
+	  (setq compilation-read-command nil)
+	  (setq compile-command
+		(concat "make -k -j2 -C " project-dir)
+		)
+	  (recompile)
+	  )
+      (progn
+	(setq compilation-read-command t)
+	(call-interactively 'compile)
+	)
+      )
+    )
+  )
