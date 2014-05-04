@@ -1,5 +1,4 @@
 (require 'cmake-mode)
-(require 'project-explorer)
 
 
 ; Remove trailing whitespaces on save.
@@ -33,9 +32,6 @@
 (global-set-key (kbd "<f18>") 'compile)
 (global-set-key (kbd "<f4>") 'next-error)
 (global-set-key (kbd "S-<f4>") 'previous-error)
-
-(setq qt4-base-dir "/usr/include/qt4")
-(add-to-list 'auto-mode-alist (cons qt4-base-dir 'c++-mode))
 
 (defun insert-infinf()
   (interactive)
