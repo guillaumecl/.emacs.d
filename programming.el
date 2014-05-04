@@ -68,6 +68,7 @@
   (local-set-key (kbd "C-M-<down>") 'forward-paragraph)
   (local-set-key (kbd "ESC C-<up>") 'backward-paragraph)
   (local-set-key (kbd "ESC C-<down>") 'forward-paragraph)
+  (local-set-key (kbd "RET") 'newline-and-indent)
   (ggtags-mode t)
 )
 
