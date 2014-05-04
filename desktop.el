@@ -1,5 +1,3 @@
-(require 'tramp)
-
 (load "programming")
 (load "ansi")
 (load "git")
