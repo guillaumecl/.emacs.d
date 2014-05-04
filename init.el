@@ -3,19 +3,12 @@
 (add-to-list 'load-path "~/.emacs.d/machines/")
 (add-to-list 'load-path "~/.emacs.d/libs/")
 
-(if (>= emacs-major-version 24)
-  (progn
-    (require 'package)
-    (add-to-list 'package-archives
-		 '("melpa" . "http://melpa.milkbox.net/packages/") t)
-    (package-initialize)
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
 
-    (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-
-    (load-theme 'alect-dark t)
-
-    )
-  )
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -27,7 +20,6 @@
  '(c-objc-method-parameter-offset 8)
  '(display-time-24hr-format t)
  '(display-time-mode t)
- '(ecb-options-version "2.40")
  '(fringe-mode 0 nil (fringe))
  '(hide-ifdef-initially t)
  '(indent-tabs-mode t)
@@ -45,44 +37,24 @@
  '(tab-width 8)
  '(tool-bar-mode nil))
 
-(if (>= emacs-major-version 24)
-    (progn
+(load "backups")
+(load "reload")
+(load "general")
+(load "orgmode")
 
-      (load "backups")
-      (load "general")
-      (load "programming")
-      (load "reload")
-      (load "ansi")
-      (load "orgmode")
-      (load "git")
-      (load "mail")
-      (load "console")
+(require 'auto-recomp)
 
-      (require 'auto-recomp)
-      (require 'tramp)
+(require 'server)
 
-      (require 'server)
-
-      (if (not (server-running-p))
-          (server-start)
-        )
-
-      )
-
-  (custom-set-faces
-   ;; custom-set-faces was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 122 :width normal)))))
+(if (not (server-running-p))
+    (server-start)
   )
 
-(load (system-name))
-
-(put 'downcase-region 'disabled nil)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 122 :width normal)))))
+
+(load (system-name))

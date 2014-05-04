@@ -1,2 +1,3 @@
+(load "desktop")
 
-(require 'jabber)
+(load-theme 'alect-dark t)

@@ -4,7 +4,7 @@
 (setq org-default-notes-file "~/org")
 
 (setq org-log-done 'time)
-(setq org-modules (quote (org-bbdb org-bibtex org-docview org-gnus org-info org-jsinfo org-irc org-mew org-mhe org-rmail org-vm org-wl org-w3m org-mouse)))
+(setq org-modules (quote (org-docview org-info org-mhe org-rmail org-vm org-wl org-mouse)))
 (setq org-startup-indented t)
 
 (add-hook 'org-mode-hook
