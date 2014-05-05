@@ -111,17 +111,6 @@
         (t (self-insert-command (or arg 1)))))
 
 
-(defun toggle-explorer()
-  (interactive)
-  (let ((b (get-buffer "*project-explorer*")
-           ))
-    (if b
-        (kill-buffer b)
-      (project-explorer-open)
-      )
-    )
-  )
-
 (defun un-camelcase-word-at-point ()
   "un-camelcase the word at point, replacing uppercase chars with
 the lowercase version preceded by an underscore.
@@ -144,9 +133,6 @@ downcased, no preceding underscore.
 ;(global-set-key (kbd "M-.") 'gtags-find-symbol)
 
 (load "qt")
-
-;(project-explorer-open)
-
 
 (require 'nasm-mode)
 
