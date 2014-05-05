@@ -127,7 +127,6 @@ downcased, no preceding underscore.
 
 
 (global-set-key (kbd "M-à") 'un-camelcase-word-at-point)
-(global-set-key (kbd "<f3>") 'toggle-explorer)
 
 
 ;(global-set-key (kbd "M-.") 'gtags-find-symbol)
