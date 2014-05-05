@@ -40,9 +40,29 @@
 (global-whitespace-mode t)
 
 
+(defun compile-vbox ()
+  (interactive)
+  (let ((old-compilation-string compile-command))
+    (setq compile-command "~/src/tetrane/compile_vbox.sh")
+
+    (setq compilation-buffer-name-function
+          (lambda (major)
+            "Return the"
+            "*compilation* - VirtualBox"))
+
+    (recompile)
+    (setq compile-command old-compilation-string)
+    (setq compilation-buffer-name-function nil)
+    )
+)
+
 (defun reven-hooks ()
   (setq indent-tabs-mode nil)
   (setq c-basic-offset 4)
+  (local-set-key (kbd "<f7>") 'compile-vbox)
+  (local-set-key (kbd "<f8>") 'recompile)
+  (local-set-key (kbd "S-<f8>") 'compile)
+  (local-set-key (kbd "<f18>") 'compile)
 )
 
 
