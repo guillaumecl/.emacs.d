@@ -147,37 +147,38 @@ downcased, no preceding underscore.
     (when file
 	(when
 	    (string-match "projets/\\([a-zA-Z0-9_\\-]*\\)/" (buffer-file-name))
-	    (match-string 1 (buffer-file-name)))
-      )
-    )
-  )
+	    (match-string 1 (buffer-file-name))))))
 
-(defun find-project-dir (project)
+(defun find-project-src-dir (project)
+  (expand-file-name project "~/projets"))
+
+(defun find-project-build-dir (project)
   (when project
     (let ((build-dir (expand-file-name project "~/projets/build"))
-	  (src-dir (expand-file-name project "~/projets")))
+	  (src-dir (find-project-src-dir project)))
       (if (file-exists-p build-dir)
 	  build-dir
-	src-dir))
-    )
-  )
+	src-dir))))
+
+(find-project-build-dir "tmpc")
 
 (defun compile-current-project ()
+  "Finds the current project source and build directories.
+Calls recompile with directories set appropriately."
   (interactive)
-  (let ((project-dir (find-project-dir (find-project-name))))
-    (message (concat "Project: " project-dir))
-    (if project-dir
-	(progn
-	  (setq compilation-read-command nil)
-	  (setq compile-command
-		(concat "make -k -j2 -C " project-dir)
-		)
-	  (recompile)
-	  )
-      (progn
-	(setq compilation-read-command t)
-	(call-interactively 'compile)
-	)
-      )
-    )
-  )
+  (let ((project (find-project-name)))
+    (when project
+      (let ((project-dir (find-project-build-dir project))
+	    (project-src (find-project-src-dir project)))
+	(message project-src)
+	(message project-dir)
+	(if project-dir
+	    (progn
+	      (setq compilation-read-command nil)
+	      (setq compilation-directory project-src)
+	      (setq compile-command
+		    (concat "make -k -j2 -C " project-dir))
+	      (recompile))
+	  (progn
+	    (setq compilation-read-command t)
+	    (call-interactively 'compile)))))))
