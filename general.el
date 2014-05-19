@@ -111,14 +111,3 @@
 (global-set-key (kbd "ESC C-<next>") 'enlarge-window-horizontally)
 
 (auto-insert-mode t)
-
-(setq-default mode-line-format
-      (list
-       mode-line-buffer-identification
-       "   "
-       mode-line-position
-       '(vc-mode vc-mode)
-       "  "
-       mode-line-modes
-       mode-line-misc-info
-       mode-line-end-spaces))
