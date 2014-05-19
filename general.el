@@ -27,6 +27,11 @@
 
 (global-set-key (kbd "<f6>") 'mingus)
 
+(global-set-key (kbd "<mouse-6>") (lambda()
+                                    (interactive)))
+(global-set-key (kbd "<mouse-7>") (lambda()
+                                    (interactive)))
+
 (fset 'yes-or-no-p 'y-or-n-p)
 
 
