@@ -47,23 +47,26 @@
 
     (setq compilation-buffer-name-function
           (lambda (major)
-            "Return the"
+            "Undocumented"
             "*compilation* - VirtualBox"))
 
     (recompile)
     (setq compile-command old-compilation-string)
-    (setq compilation-buffer-name-function nil)
-    )
-)
+    (setq compilation-buffer-name-function nil)))
 
 (defun reven-hooks ()
   (setq indent-tabs-mode nil)
   (setq c-basic-offset 4)
-  (local-set-key (kbd "<f7>") 'compile-vbox)
+  (local-set-key (kbd "<f6>") 'compile-vbox)
   (local-set-key (kbd "<f8>") 'recompile)
   (local-set-key (kbd "S-<f8>") 'compile)
   (local-set-key (kbd "<f18>") 'compile)
 )
+
+(global-set-key (kbd "<f6>") 'compile-vbox)
+(global-set-key (kbd "<f8>") 'recompile)
+(global-set-key (kbd "S-<f8>") 'compile)
+(global-set-key (kbd "<f18>") 'compile)
 
 
 (add-hook 'c-mode-common-hook 'reven-hooks)
