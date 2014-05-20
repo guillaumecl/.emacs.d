@@ -9,11 +9,12 @@
 
 (setq-default mode-line-format
       (list
-       mode-line-buffer-identification
+       ""
+       'mode-line-buffer-identification
        "   "
-       mode-line-position
+       'mode-line-position
        '(vc-mode vc-mode)
        "  "
-       mode-line-modes
-       mode-line-misc-info
-       mode-line-end-spaces))
+       'mode-line-modes
+       'mode-line-misc-info
+       'mode-line-end-spaces))
