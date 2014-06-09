@@ -160,8 +160,6 @@ downcased, no preceding underscore.
 	  build-dir
 	src-dir))))
 
-(find-project-build-dir "tmpc")
-
 (defun compile-current-project ()
   "Finds the current project source and build directories.
 Calls recompile with directories set appropriately."
