@@ -66,6 +66,7 @@
   (local-set-key (kbd "ESC C-<down>") 'forward-paragraph)
   (local-set-key (kbd "RET") 'newline-and-indent)
   (ggtags-mode t)
+  (setq-local eldoc-documentation-function #'ggtags-eldoc-function)
 )
 
 (add-hook 'c-mode-common-hook
