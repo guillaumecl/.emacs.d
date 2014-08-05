@@ -71,6 +71,7 @@
 
   (ggtags-mode t)
   (setq-local eldoc-documentation-function #'ggtags-eldoc-function)
+  (eldoc-mode t)
 )
 
 (add-hook 'c-mode-common-hook
