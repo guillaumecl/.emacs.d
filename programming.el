@@ -27,8 +27,8 @@
 
 (global-set-key (kbd "C-c h") 'ff-find-other-file)
 
-;(global-set-key (kbd "<f8>") 'recompile)
-;(global-set-key (kbd "S-<f8>") 'compile)
+(global-set-key (kbd "<f8>") 'recompile)
+(global-set-key (kbd "S-<f8>") 'compile)
 (global-set-key (kbd "<f18>") 'compile)
 (global-set-key (kbd "<f4>") 'next-error)
 (global-set-key (kbd "S-<f4>") 'previous-error)
@@ -65,6 +65,10 @@
   (local-set-key (kbd "ESC C-<up>") 'backward-paragraph)
   (local-set-key (kbd "ESC C-<down>") 'forward-paragraph)
   (local-set-key (kbd "RET") 'newline-and-indent)
+
+  (local-set-key (kbd "<f8>") 'recompile)
+  (local-set-key (kbd "S-<f8>") 'compile)
+
   (ggtags-mode t)
   (setq-local eldoc-documentation-function #'ggtags-eldoc-function)
 )
