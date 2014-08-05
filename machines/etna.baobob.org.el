@@ -8,3 +8,7 @@
 		    (setq compilation-read-command t)
 		    (call-interactively 'compile)
 		    (setq compilation-read-command temp))))
+(setq auto-mode-alist
+      (append
+       '(
+         ("\\.wiki\\'" . textile-mode)) auto-mode-alist))

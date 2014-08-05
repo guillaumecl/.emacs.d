@@ -5,7 +5,7 @@
 
 ;;;### (autoloads (ggtags-try-complete-tag ggtags-build-imenu-index
 ;;;;;;  ggtags-mode ggtags-find-tag-dwim ggtags-find-project) "ggtags"
-;;;;;;  "ggtags.el" (21298 42539 630619 322000))
+;;;;;;  "ggtags.el" (21472 37854 361826 875000))
 ;;; Generated autoloads from ggtags.el
 
 (autoload 'ggtags-find-project "ggtags" "\
@@ -45,7 +45,7 @@ A function suitable for `hippie-expand-try-functions-list'.
 
 ;;;***
 
-;;;### (autoloads nil nil ("ggtags-pkg.el") (21298 42539 693174 818000))
+;;;### (autoloads nil nil ("ggtags-pkg.el") (21472 37854 648532 991000))
 
 ;;;***
 
