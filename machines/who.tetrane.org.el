@@ -1,6 +1,6 @@
 (load "desktop")
 
-(load-theme 'alect-dark t)
+;(load-theme 'alect-dark t)
 
 (require 'lua-mode)
 (require 'cmake-mode)
