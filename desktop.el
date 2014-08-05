@@ -4,7 +4,6 @@
 (load "git")
 (load "mail")
 (load "console")
-(load "leekwars")
 
 
 
