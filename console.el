@@ -12,5 +12,8 @@
   (unless (display-graphic-p frame)
     ;; enable mouse reporting for terminal emulators
     (xterm-mouse-mode 1)
+    (set-variable 'frame-background-mode 'dark)
+    (frame-set-background-mode frame)
+    (set-variable 'frame-background-mode nil)
     ))
 (add-hook 'after-make-frame-functions 'my-terminal-config)
