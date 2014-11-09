@@ -182,7 +182,8 @@ Calls recompile with directories set appropriately."
 	      (setq compilation-directory project-src)
 	      (setq compile-command
 		    (concat "make -k -j2 -C " project-dir))
-	      (recompile))
+	      (recompile)
+	      (setq compilation-read-command t))
 	  (progn
 	    (setq compilation-read-command t)
 	    (call-interactively 'compile)))))))
