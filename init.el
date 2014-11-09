@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/files/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/machines/")
 (add-to-list 'load-path "~/.emacs.d/libs/")
