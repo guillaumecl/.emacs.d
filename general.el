@@ -111,3 +111,20 @@
 (global-set-key (kbd "ESC C-<next>") 'enlarge-window-horizontally)
 
 (auto-insert-mode t)
+
+
+(global-set-key (kbd "C-x a k") (lambda()
+			  (interactive)
+			  (set-input-method 'japanese-katakana)))
+
+(global-set-key (kbd "C-x a h") (lambda()
+			  (interactive)
+			  (set-input-method 'japanese-hiragana)))
+
+(global-set-key (kbd "C-x a j") (lambda()
+			  (interactive)
+			  (set-input-method 'japanese)))
+
+(global-set-key (kbd "C-x a a") (lambda()
+			  (interactive)
+			  (set-input-method nil)))
