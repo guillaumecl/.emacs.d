@@ -35,7 +35,7 @@
          ) auto-mode-alist))
 
 (require 'whitespace)
-(setq whitespace-line-column 120)
+(setq whitespace-line-column 119)
 (setq whitespace-style '(face lines-tail trailing))
 (global-whitespace-mode t)
 
@@ -54,6 +54,20 @@
     (setq compile-command old-compilation-string)
     (setq compilation-buffer-name-function nil)))
 
+(defun make-test ()
+  (interactive)
+  (let ((old-compilation-string compile-command))
+    (setq compile-command "~/src/tetrane/compile.sh test ARGS=-j10")
+
+    (setq compilation-buffer-name-function
+          (lambda (major)
+            "Undocumented"
+            "*make test*"))
+
+    (recompile)
+    (setq compile-command old-compilation-string)
+    (setq compilation-buffer-name-function nil)))
+
 (defun reven-hooks ()
   (setq indent-tabs-mode nil)
   (setq c-basic-offset 4)
@@ -61,12 +75,15 @@
   (local-set-key (kbd "<f8>") 'recompile)
   (local-set-key (kbd "S-<f8>") 'compile)
   (local-set-key (kbd "<f18>") 'compile)
+  (local-set-key (kbd "<f9>") 'make-test)
+  (setq fill-column 118)
 )
 
 (global-set-key (kbd "<f6>") 'compile-vbox)
 (global-set-key (kbd "<f8>") 'recompile)
 (global-set-key (kbd "S-<f8>") 'compile)
 (global-set-key (kbd "<f18>") 'compile)
+(global-set-key (kbd "<f9>") 'make-test)
 
 
 (add-hook 'c-mode-common-hook 'reven-hooks)
