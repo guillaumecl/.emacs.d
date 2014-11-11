@@ -1,9 +1,7 @@
 
 ; https://www.gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html
-(require (quote uniquify))
+(require 'uniquify)
 (setq uniquify-buffer-name-style (quote post-forward))
-
-(global-set-key (kbd "<down-mouse-20>") 'buffer-menu)
 
 (global-set-key (kbd "C-<tab>") 'other-frame)
 (global-set-key (kbd "<backtab>") 'other-window)
@@ -24,9 +22,6 @@
 (global-set-key (kbd "ESC S-<up>") 'scroll-down-line)
 (global-set-key (kbd "ESC S-<down>") 'scroll-up-line)
 
-
-(global-set-key (kbd "<f6>") 'mingus)
-
 (global-set-key (kbd "<mouse-6>") (lambda()
                                     (interactive)))
 (global-set-key (kbd "<mouse-7>") (lambda()
@@ -36,7 +31,6 @@
 
 
 (global-set-key "\C-xab" '(lambda ()(interactive)(ansi-term "/bin/bash")))
-(global-set-key "\C-xap" 'python-shell)
 (global-set-key "\C-xar" 'rename-buffer)
 
 (setq kill-whole-line t);; will make "Ctrl-k" kills an entire line if the cursor is at the beginning of line -- very useful.

@@ -14,6 +14,6 @@
     (xterm-mouse-mode 1)
     (set-variable 'frame-background-mode 'dark)
     (frame-set-background-mode frame)
-    (set-variable 'frame-background-mode nil)
-    ))
+    (set-variable 'frame-background-mode nil)))
+
 (add-hook 'after-make-frame-functions 'my-terminal-config)

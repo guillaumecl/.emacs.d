@@ -4,7 +4,6 @@
 
 (define-derived-mode fundamental-ansi-mode fundamental-mode "fundamental ansi"
   "Fundamental mode that understands ANSI colors."
-  (require (quote tty-format))
-  (format-decode-buffer (quote backspace-overstrike))
-  (format-decode-buffer (quote ansi-colors))
-  )
+  (require 'tty-format)
+  (format-decode-buffer 'backspace-overstrike)
+  (format-decode-buffer 'ansi-colors))

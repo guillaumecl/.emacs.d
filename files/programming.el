@@ -3,7 +3,6 @@
 
 ; Remove trailing whitespaces on save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(setq-default display-buffer-reuse-frames t)
 
 ; Scroll buffer as output appears.
 (setq compilation-scroll-output t)
@@ -134,8 +133,6 @@ downcased, no preceding underscore.
 
 (global-set-key (kbd "M-à") 'un-camelcase-word-at-point)
 
-
-;(global-set-key (kbd "M-.") 'gtags-find-symbol)
 
 (load "qt")
 
