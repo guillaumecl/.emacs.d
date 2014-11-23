@@ -184,3 +184,18 @@ Calls recompile with directories set appropriately."
 	  (progn
 	    (setq compilation-read-command t)
 	    (call-interactively 'compile)))))))
+
+
+
+
+(defun css-hooks ()
+  (setq css-indent-offset 8)
+)
+
+(add-hook 'css-mode-hook 'css-hooks)
+
+(defun html-hooks ()
+  (setq sgml-basic-offset 8)
+)
+
+(add-hook 'html-mode-hook 'html-hooks)
