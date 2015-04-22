@@ -44,34 +44,7 @@
 (add-hook 'org-mode-hook (lambda ()
                            (add-hook 'find-file-hook 'org-save-hook nil t)))
 
-
-(setq org-publish-project-alist
-      '(
-	("baobob.org-posts"
-	 :base-directory "~/blog"
-	 :base-extension "org"
-	 :exclude "menu.org"
-	 :publishing-directory "~/public_html"
-	 :publishing-function org-publish-org-to-html
-	 :html-preamble "<div id='menu'>
-		<ul>
-			<li><a href='index.html'>Home</a>
-		</ul>
-		</div>"
-	 :html-postamble ""
-	 :recursive t
-	 :author nil
-	 :section-numbers nil
-	 :table-of-contents t
-	 :language "fr"
-	 :style "<link rel=\"stylesheet\"
-                     href=\"resources/baobob.css\"
-                     type=\"text/css\"/>")
-	("baobob.org-static"
-	 :base-directory "~/blog/"
-	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-	 :publishing-directory "~/public_html/"
-	 :recursive t
-	 :publishing-function org-publish-attachment)
-	("baobob.org"
-	 :components ("baobob.org-posts" "baobob.org-static"))))
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "M-RET") 'org-insert-todo-heading)
+	    (local-set-key (kbd "S-M-RET") 'org-insert-heading)))
