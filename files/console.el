@@ -12,6 +12,7 @@
   (unless (display-graphic-p frame)
     ;; enable mouse reporting for terminal emulators
     (xterm-mouse-mode 1)
+    (send-string-to-terminal "\e[5 q" (frame-terminal frame))
     (set-variable 'frame-background-mode 'dark)
     (frame-set-background-mode frame)
     (set-variable 'frame-background-mode nil)))

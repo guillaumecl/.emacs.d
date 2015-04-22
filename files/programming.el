@@ -213,3 +213,4 @@ Calls recompile with directories set appropriately."
 (add-hook 'html-mode-hook 'html-hooks)
 
 (yas-global-mode)
+(setq-default cursor-type 'bar)
