@@ -11,3 +11,5 @@ elpa/archives
 %backup%~
 console.elc
 bookmarks
+.yas-compiled-*.el
+
