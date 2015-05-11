@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: class
+# key: class
+# binding: C-c C-c C-c
+# --
+#ifndef ${1:$(upcase yas-text)}_H
+#define ${1:$(upcase yas-text)}_H
+
+/**
+ * ${2:Documentation for class $1}
+ */
+class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}
+{
+public:
+	$1();
+	~$1();
+
+	$0
+};
+
+#endif /* ${1:$(upcase yas-text)}_H */

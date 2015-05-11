@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: guard
+# key: guard
+# binding: C-c C-c C-g
+# --
+#ifndef ${1:`(upcase (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`$(upcase yas-text)}_H
+#define $1_H
+
+$0
+
+#endif /* $1_H */

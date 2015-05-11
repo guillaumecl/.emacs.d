@@ -16,12 +16,24 @@
          ("\\.hh\\'" . c++-mode)
          ("\\.hh\\'" . c++-mode)
          ("\\.hxx\\'" . c++-mode)
-         ("\\.c\\'" . c++-mode)
+         ("\\.c\\'" . c-mode)
          ("\\.cc\\'" . c++-mode)
          ("\\.cpp\\'" . c++-mode)
          ("\\.kmk\\'" . makefile-mode)
          ("\\.md\\'" . markdown-mode)
          ) auto-mode-alist))
+
+(defun find-c-file ()
+  "Returns true if the buffer is a .h file in a directory where some C files exist."
+  (message "ok")
+  (message (file-name-directory (expand-file-name (buffer-file-name))))
+  (message (file-name-extension (buffer-file-name)))
+  (and
+   (buffer-file-name)
+   (string-equal (file-name-extension (buffer-file-name)) "h")
+   (directory-files (file-name-directory (expand-file-name (buffer-file-name))) nil ".*\\.c$")))
+
+(add-to-list 'magic-mode-alist '(find-c-file . c-mode ))
 
 (setq stack-trace-on-error t)
 
@@ -199,3 +211,19 @@ Calls recompile with directories set appropriately."
 (add-hook 'markdown-mode-hook
           (lambda ()
             (add-hook 'after-save-hook 'cleanup-org-tables nil 'make-it-local)))
+
+
+(defun css-hooks ()
+  (setq css-indent-offset 8)
+)
+
+(add-hook 'css-mode-hook 'css-hooks)
+
+(defun html-hooks ()
+  (setq sgml-basic-offset 8)
+)
+
+(add-hook 'html-mode-hook 'html-hooks)
+
+(yas-global-mode)
+(setq-default cursor-type 'bar)
