@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: for
+# key: for
+# binding: C-c C-c C-f
+# --
+for (const auto& ${1:var} : ${2:container})
+{
+    $0
+}

@@ -6,4 +6,4 @@ ${1:Type} ${2:member_name}_;
 
 $1 $2() const { return $2_; }
 void set_$2($1 $2) { $2_ = $2; }
- $0
+$0

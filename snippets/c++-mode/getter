@@ -2,5 +2,4 @@
 # name: getter
 # key: getter
 # --
-
 inline ${3:Type} ${1:class}::${2:member_name}() const { return $2_; }

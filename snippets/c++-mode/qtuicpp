@@ -1,0 +1,24 @@
+# -*- mode: snippet -*-
+# name: qt_ui_cpp
+# key: qtuicpp
+# binding: C-c C-c C-u
+# condition: (string-suffix-p ".cpp" (buffer-name))
+# --
+#include "$1.h"
+#include "ui_$1.h"
+
+namespace reven {
+namespace output {
+namespace axion {
+
+${1:Class}::$1(QWidget *parent)
+    : ${2: QWidget}(parent)
+    , ui_(new Ui::$1)
+{
+    ui_->setupUi(this);
+    $0
+}
+
+$1::~$1() = default;
+
+}}} //reven::output::axion
