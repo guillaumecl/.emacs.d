@@ -20,6 +20,7 @@
          ("\\.cc\\'" . c++-mode)
          ("\\.cpp\\'" . c++-mode)
          ("\\.kmk\\'" . makefile-mode)
+         ("\\.md\\'" . markdown-mode)
          ) auto-mode-alist))
 
 (setq stack-trace-on-error t)
@@ -184,3 +185,17 @@ Calls recompile with directories set appropriately."
 	  (progn
 	    (setq compilation-read-command t)
 	    (call-interactively 'compile)))))))
+
+(require 'org-table)
+(require 'markdown-mode)
+
+(defun cleanup-org-tables ()
+  (save-excursion
+    (goto-char (point-min))
+    (while (search-forward "-+-" nil t)
+      (replace-match "-|-"))))
+
+(add-hook 'markdown-mode-hook 'orgtbl-mode)
+(add-hook 'markdown-mode-hook
+          (lambda ()
+            (add-hook 'after-save-hook 'cleanup-org-tables nil 'make-it-local)))
