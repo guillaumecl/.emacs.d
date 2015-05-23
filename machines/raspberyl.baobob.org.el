@@ -1,2 +1,3 @@
 
 ;(load "desktop")
+(load "console")
