@@ -6,13 +6,19 @@
 
 (global-set-key (kbd "<clearline>") 'end-of-buffer)
 
+(defun setup-cursor (&optional frame)
+  "Setup the cursor"
+  (interactive)
+  (send-string-to-terminal "\e[5 q"
+			   (if frame (frame-terminal frame)
+			     nil)))
 
 (defun my-terminal-config (&optional frame)
   "Establish settings for the current terminal."
   (unless (display-graphic-p frame)
     ;; enable mouse reporting for terminal emulators
     (xterm-mouse-mode 1)
-    (send-string-to-terminal "\e[5 q" (frame-terminal frame))
+    (setup-cursor frame)
     (set-variable 'frame-background-mode 'dark)
     (frame-set-background-mode frame)
     (set-variable 'frame-background-mode nil)))
