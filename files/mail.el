@@ -13,3 +13,8 @@
                                                           (interactive)
                                                           (save-buffer)
                                                           (server-edit)))))))
+
+(setq gnus-select-method '(nnimap "baobob"
+				  (nnimap-address "mail.gandi.net")   ; it could also be imap.googlemail.com if that's your server.
+				  (nnimap-server-port 993)
+				  (nnimap-stream ssl)))
