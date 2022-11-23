@@ -54,8 +54,6 @@
   (insert ">>")
 )
 
-(require 'ggtags)
-
 (defun c-specific-hooks ()
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-close 0)
@@ -80,7 +78,6 @@
   (local-set-key (kbd "<f8>") 'recompile)
   (local-set-key (kbd "S-<f8>") 'compile)
 
-  (ggtags-mode t)
   (setq-local eldoc-documentation-function #'ggtags-eldoc-function)
   (eldoc-mode t)
 )
@@ -148,8 +145,6 @@ downcased, no preceding underscore.
 
 (load "qt")
 
-(require 'nasm-mode)
-
 (setq auto-mode-alist
       (append
        '(
@@ -212,5 +207,4 @@ Calls recompile with directories set appropriately."
 
 (add-hook 'html-mode-hook 'html-hooks)
 
-(yas-global-mode)
 (setq-default cursor-type 'bar)
