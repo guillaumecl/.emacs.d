@@ -20,6 +20,7 @@
          ("\\.cc\\'" . c++-mode)
          ("\\.cpp\\'" . c++-mode)
          ("\\.kmk\\'" . makefile-mode)
+         ("\\.md\\'" . markdown-mode)
          ) auto-mode-alist))
 
 (defun find-c-file ()
@@ -192,19 +193,19 @@ Calls recompile with directories set appropriately."
 	    (setq compilation-read-command t)
 	    (call-interactively 'compile)))))))
 
+(require 'org-table)
+(require 'markdown-mode)
 
+(defun cleanup-org-tables ()
+  (save-excursion
+    (goto-char (point-min))
+    (while (search-forward "-+-" nil t)
+      (replace-match "-|-"))))
 
+(add-hook 'markdown-mode-hook 'orgtbl-mode)
+(add-hook 'markdown-mode-hook
+          (lambda ()
+            (add-hook 'after-save-hook 'cleanup-org-tables nil 'make-it-local)))
 
-(defun css-hooks ()
-  (setq css-indent-offset 8)
-)
-
-(add-hook 'css-mode-hook 'css-hooks)
-
-(defun html-hooks ()
-  (setq sgml-basic-offset 8)
-)
-
-(add-hook 'html-mode-hook 'html-hooks)
 
 (setq-default cursor-type 'bar)

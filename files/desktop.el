@@ -1,8 +1,10 @@
-(load "programming")
-(load "compilation")
-(load "ansi")
-(load "git")
-(load "mail")
+(when (not (= 0 (user-uid)))
+  (load "programming")
+  (load "compilation")
+  (load "ansi")
+  (load "git")
+  (load "mail"))
+
 (load "console")
 
 

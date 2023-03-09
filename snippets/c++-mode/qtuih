@@ -1,0 +1,39 @@
+# -*- mode: snippet -*-
+# name: qt_ui
+# key: qtuih
+# binding: C-c C-c C-u
+# condition: (string-suffix-p ".h" (buffer-name))
+# --
+#ifndef TETRANE_REVEN_OUTPUT_AXION_${1:$(upcase yas-text)}_H
+#define TETRANE_REVEN_OUTPUT_AXION_${1:$(upcase yas-text)}_H
+
+#include <$2>
+#include <memory>
+
+namespace Ui
+{
+class $1;
+}
+
+namespace reven {
+namespace output {
+namespace axion {
+
+//! ${3:Documentation for the new widget}
+class ${1:Class} : public ${2:QWidget}
+{
+    Q_OBJECT
+public:
+    $1(QWidget *parent = nullptr);
+    virtual ~$1();
+
+    $0
+
+private:
+    std::unique_ptr<Ui::$1> ui_;
+}; // class $1
+
+
+}}} //reven::output::axion
+
+#endif //TETRANE_REVEN_OUTPUT_AXION_{1:$(upcase yas-text)}_H
